@@ -1,0 +1,83 @@
+https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+https://www.raspberrypi.org/downloads/raspbian/
+https://sourceforge.net/projects/win32diskimager/
+
+
+login: pi
+pass: raspberry
+
+
+
+$sudo service ssh start
+
+
+$sudo raspi-config
+
+Interfacing Options
+SSH
+
+
+
+from PUTTY
+
+$uname
+$lscpu
+$cat /proc/cpuinfo
+$df
+
+$halt
+$poweroff
+$reboot
+$shutdown
+
+
+$sudo apt-get update
+$sudo apt-get upgrade
+
+
+~?
+$wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz
+$tar xf Python-3.6.5.tar.xz
+$cd Python-3.6.5
+$./configure
+$make
+$sudo make altinstall
+~
+
+
+$python3
+
+$sudo apt-get install python3-pip
+$sudo pip3 install --upgrade setuptools pip
+
+$pip3 install pyserial
+
+>>>import glob
+>>>import serial
+>>>glob.glob('/dev/tty[A-Za-z]*')
+>>>s = serial.Serial('ttyACM0',9600)
+>>>while True:
+>>>	if adata.inWating()>0:
+>>>		print(adata.readline())
+
+
+ARDUINO CODE:
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+Serial.println("Hello metallicode");
+delay(1000);
+}
+
+
+
+BOT
+$pip install python-telegram-bot --upgrade --user
+
+
+
+
