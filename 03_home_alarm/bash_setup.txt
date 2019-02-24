@@ -1,0 +1,26 @@
+exec & => executes a process as a background process so you may continue using the same terminal for other jobs.
+nohup => avoids all SIGHUP(terminate signal) and continues execution even if you terminal is closed.
+
+
+#!/bin/bash
+until python3 /home/pi/doorbot/test.py; do
+    echo "'myscript.py' crashed"
+    sleep 1
+done
+
+chmod 777 monitor.sh
+
+
+{set HOME variable to target user's home dir
+run command as specified user name or ID}
+
+
+sudo nano /ect/rc.local
+sleep 10 && sudo -H -u pi nohup /home/pi/doorbot/monitor.sh & 
+
+$ crontab -e
+@reboot sleep 10 && sudo -H -u pi nohup /home/pi/doorbot/monitor.sh & 
+
+
+
+$ sudo grep CRON /var/log/syslog
