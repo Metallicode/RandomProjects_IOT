@@ -1,0 +1,8 @@
+Site_URL,https://www.yad2.co.il/realestate/rent
+Id_API,https://www.yad2.co.il/api/item/XXXXXX/contactinfo?id=1s0gw3&isPlatinum=true
+HTML_File_Location,file://C:/Users/grysd/Desktop/dira/view_data.html
+Max_Price,4000
+Min_Rooms,2
+Property_Type,1
+City,5000
+Telegram_bot_API_Key,1008236168:AAEBJNFj4bnJUJ6Wz-pVkDU9EIYQE250N14
