@@ -11,6 +11,10 @@ class SearchHandler:
             self.url_str = url_str
             self.id_api = id_api
 
+      def Set_Urls(self, url_str, id_api):
+            self.url_str = url_str
+            self.id_api = id_api
+
       def Get_Data_From_Web(self):
             print(f"Get_Data_From_Web {self.url_str}")
             self.raw_data = self.session.get(self.url_str)

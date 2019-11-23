@@ -18,6 +18,7 @@ class AppManager:
             self.bot.Listen()
 
       def Run(self):
+            SiteScrape.SearchHandler.Set_Urls(Get_Search_Url(), Get_API_Str())
             SiteScrape.Run()
             newData = SiteScrape.Get_New_Data()
             printer.Notify_Admin(newData)
