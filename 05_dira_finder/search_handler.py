@@ -1,23 +1,24 @@
 from requests_html import HTMLSession
 
 class SearchHandler:
-      def __init__(self, url_str, id_api):
+      def __init__(self):
             self.new_data_buffer_max_size = 5
             self.new_data_buffer = []
             self.new_data = []
             self.old_data = []
             self.raw_data = None
             self.session = HTMLSession()
-            self.url_str = url_str
-            self.id_api = id_api
+            self.url_base_str = ""
+            self.url_str = ""
+            self.id_api = ""
 
-      def Set_Urls(self, url_str, id_api):
-            self.url_str = url_str
-            self.id_api = id_api
+      def Create_Search_Url(self):
+            pass
 
       def Get_Data_From_Web(self):
-            print(f"Get_Data_From_Web {self.url_str}")
-            self.raw_data = self.session.get(self.url_str)
+            if self.url_str != "":
+                  print(f"Get_Data_From_Web {self.url_str}")
+                  self.raw_data = self.session.get(self.url_str)
 
       def Get_Phone_Number(self, item_id):
             return "Get_Phone_Number not implemented..."
@@ -48,8 +49,11 @@ import json
 from dira_item import Dira
 
 class Yad2SearchHandler(SearchHandler):
-      def __init__(self, url_str, id_api):
-            super().__init__(url_str, id_api)
+      def __init__(self):
+            super().__init__()
+            self.url_base_str = "https://www.yad2.co.il/realestate/rent"
+            self.id_api = "https://www.yad2.co.il/api/item/XXXXXX/contactinfo?id=1s0gw3&isPlatinum=true"
+            self.city_dict = {"telaviv":"5000", "givatayim":"6300", "nesziona":"7200","rehovot":"8400","ramatgan":"8600","rishonlezion":"8300", "holon":"6600", "batyam":"6200", "petahtikva":"7900","ramathasharon":"2650", }
 
       def Get_Phone_Number(self, item_id):
             res = self.session.get(self.id_api.replace("XXXXXX",item_id))
@@ -57,6 +61,9 @@ class Yad2SearchHandler(SearchHandler):
             name = res.json()["data"]["contact_name"]
             return f"{number} {name}"            
 
+      def Create_Search_Url(self, search_data):
+            self.url_str = f"{self.url_base_str}?city={self.city_dict[search_data['City']]}&rooms={search_data['Min_Rooms']}--1&price=-1-{search_data['Max_Price']}"        
+            
       def Handle_Data(self):
             if self.raw_data is not None:
                   elements = self.raw_data.html.find('.feeditem')

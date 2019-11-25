@@ -1,22 +1,22 @@
 from site_scrapper import SiteScrape
 import printer
 import os
-from conf_reader import Get_Search_Url, Get_API_Str
+from conf_reader import Get_Search_Data
 import webbrowser
-
-url_str = Get_Search_Url()
-id_api = Get_API_Str()
+import search_handler
 
 if __name__ == "__main__":
       os.system('cls')
+      handler = search_handler.Yad2SearchHandler()
+      SiteScrape.Set_Handler(handler)
       SiteScrape.Sync_To_Disc()
-      SiteScrape.Set_Url(url_str, id_api)
-
+           
       while True:
             user_selection = input("1 - run query \n2 - print data \n3 - get phone number\n4 - make HTML\n5 - quit\n")
             if user_selection == "1":
-                  SiteScrape.Run(url_str)
-                  printer.Notify_User(SiteScrape.Get_New_Data())
+                  SiteScrape.SearchHandler.Create_Search_Url(Get_Search_Data())
+                  SiteScrape.Run() 
+                  printer.Notify_Admin(SiteScrape.Get_New_Data())
                   input()
             elif user_selection == "2":
                   os.system('cls')     

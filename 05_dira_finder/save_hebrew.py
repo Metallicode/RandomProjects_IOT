@@ -7,6 +7,10 @@ def save_list_encoded(myData):
           writer = csv.writer(myFile)
           writer.writerows([base64.b64encode(i.encode()) for i in convert_to_strings(myData)])
 
+def save_to_favorite(data):
+      with open('favorite_items.txt', 'a', encoding="utf-8") as myFile:
+          myFile.write(data)
+
 def read_encoded_as_list():
       new_list = []
       with open('data.csv', newline='') as File:  
