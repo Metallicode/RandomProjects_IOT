@@ -1,6 +1,6 @@
 import csv
 import base64
-from dira_item import Dira
+from libs.dira_item import Dira
 
 def save_list_encoded(myData):
       with open('data.csv', 'w') as myFile:

@@ -3,6 +3,11 @@ html{
 	background-color:#003300;
 	color:#1aff1a;
 }
+.item_text_input{
+	width:70%;
+	padding:3px;
+	margin-top:18px;
+}
 a{
 	color:#80ff80;
 }

@@ -1,10 +1,10 @@
-from site_scrapper import SiteScrape
-import printer
-from conf_reader import Get_Search_Data, Get_HTML_File_Location, Get_Bot_Key
+from libs.site_scrapper import SiteScrape
+import libs.printer as printer
+from libs.conf_reader import Get_Search_Data, Get_HTML_File_Location, Get_Bot_Key
 import webbrowser
-from tele_bot import TeleBot
+from libs.tele_bot import TeleBot
 import socketserver
-from http_server import CORSRequestHandler
+from libs.http_server import CORSRequestHandler
 from threading import Thread 
 
 class AppManager:

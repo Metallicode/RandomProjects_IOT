@@ -1,10 +1,10 @@
 import http.server
 from urllib.parse import parse_qs
-import items_logger
+from libs.items_logger import Items_Logger
 
 class CORSRequestHandler (http.server.SimpleHTTPRequestHandler):
       def end_headers (self):
-            self.items_logger = items_logger.Items_Logger()
+            self.items_logger = Items_Logger()
             self.send_header('Access-Control-Allow-Origin', '*')
             http.server.SimpleHTTPRequestHandler.end_headers(self)
 

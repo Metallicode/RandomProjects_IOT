@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, RegexHandler
-from site_scrapper import SiteScrape
+from libs.site_scrapper import SiteScrape
 from threading import Thread
-from conf_reader import Set_Config
+from libs.conf_reader import Set_Config
 
 class TeleBot:
       def __init__(self, telegram_key):
@@ -15,7 +15,7 @@ class TeleBot:
             self.subscribers = []
             self.bot = self.updater.bot
 
-            with open("telebot_subscribers.txt", "r") as f:
+            with open("libs/telebot_subscribers.txt", "r") as f:
                   for i in f.readlines():
                         if i:
                               i = i.split(',')
@@ -55,9 +55,12 @@ class TeleBot:
             pass
 
       def Save_To_File(self):
-            with open("telebot_subscribers.txt", "w") as f:
-                  for i in self.subscribers:
-                        f.write(f"{i['subscriber_id']},{i['mute']}\n")
+            with open("libs/telebot_subscribers.txt", "w") as f:
+                  for i in range(len(self.subscribers)):
+                        new_str = f"{self.subscribers[i]['subscriber_id']},{self.subscribers[i]['mute']}"
+                        if i != len(self.subscribers)-1:
+                              new_str=new_str+"\n"
+                        f.write(new_str)
                   
       def Subscribe(self, bot, update):
             print(update.message.chat_id)

@@ -1,9 +1,9 @@
-from site_scrapper import SiteScrape
-import printer
+from libs.site_scrapper import SiteScrape
+from libs.printer import printer
 import os
-from conf_reader import Get_Search_Data
+from libs.conf_reader import Get_Search_Data
 import webbrowser
-import search_handler
+from libs.search_handler import search_handler
 
 if __name__ == "__main__":
       os.system('cls')

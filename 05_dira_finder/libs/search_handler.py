@@ -46,7 +46,7 @@ class SearchHandler:
 
 import datetime
 import json
-from dira_item import Dira
+from libs.dira_item import Dira
 
 class Yad2SearchHandler(SearchHandler):
       def __init__(self):

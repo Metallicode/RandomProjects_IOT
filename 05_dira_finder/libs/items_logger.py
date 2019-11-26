@@ -1,4 +1,4 @@
-from save_hebrew import save_to_favorite
+from libs.save_hebrew import save_to_favorite
 
 class Items_Logger:
       def Log(self, data):
