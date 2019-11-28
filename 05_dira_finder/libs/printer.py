@@ -14,10 +14,10 @@ def Print_All_Data(data):
 
 def Make_HTML(data):
       style = "<link rel='stylesheet' type='text/css' href='style.css'>"    
-      strTable = "<html>"+style+"<body><h1>Metallibord</h1><table><tr><th></th></tr>"
+      strTable = f"<html>"+style+"<body><h1>Metallibord</h1><table><tr><th></th></tr>"
  
       for i in range(len(data)):
-            item_id = f"<a id='item{data[i].item_id}_id'>{data[i].item_id}</a>"
+            item_id = f"<a class='item_id' id='item{data[i].item_id}_id'>{data[i].item_id}</a>"
             item_title = f"<h3 id='item{data[i].item_id}_title'><a href='https://www.google.co.il/maps/place/{data[i].title}'>{data[i].title}</a></h3>"
             item_subtitle = f"<p id='item{data[i].item_id}_subtitle'>{data[i].subtitle}</p>"
             item_num_spec = f"<p>rooms:<b id='item{data[i].item_id}_room_num'>{data[i].room_num}</b>      size:<b id='item{data[i].item_id}_size'>{data[i].size}</b></p>"
@@ -38,6 +38,6 @@ def Make_HTML(data):
  
       strTable = strTable+f"</table>{page_script}</body></html>"
  
-      with open("html/view_data.html", 'w', encoding="utf-8") as hs:
+      with open("html//view_data.html", 'w', encoding="utf-8") as hs:
            hs.write(strTable)
  

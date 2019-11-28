@@ -71,17 +71,24 @@ class Yad2SearchHandler(SearchHandler):
                   self.new_data = []
      
                   for i in range(len(elements)):
-                        item_id = list(elements[i].find(f'#feed_item_{i}')[0].attrs.keys())[1]
-                        item_id = elements[i].find(f'#feed_item_{i}')[0].attrs[item_id]
+                        is_item = True
                         
-                        title = elements[i].find('.title')[0].text
-                        subtitle = elements[i].find('.subtitle')[0].text
-                        num_rooms = elements[i].find(f'#data_rooms_{i}')[0].text
-                        square_meter = elements[i].find(f'#data_SquareMeter_{i}')[0].text
-                        price = elements[i].find(f'#feed_item_{i}_price')[0].text
-                        date = elements[i].find(f'.showDateInLobby')[0].text
+                        try:
+                              item_id = list(elements[i].find(f'#feed_item_{i}')[0].attrs.keys())[1]
+                              item_id = elements[i].find(f'#feed_item_{i}')[0].attrs[item_id]
 
-                        if item_id is not "" and item_id != "true" and item_id != "false":
+                              title = elements[i].find('.title')[0].text
+                              subtitle = elements[i].find('.subtitle')[0].text
+                              num_rooms = elements[i].find(f'#data_rooms_{i}')[0].text
+                              square_meter = elements[i].find(f'#data_SquareMeter_{i}')[0].text
+                              price = elements[i].find(f'#feed_item_{i}_price')[0].text
+                              date = elements[i].find(f'.showDateInLobby')[0].text
+
+                        except:
+                              is_item = False
+
+                        
+                        if is_item is True and item_id is not "" and item_id != "true" and item_id != "false":
                               if len(price)>6:
                                     if price[6] == "₪":
                                           new_dira = Dira(item_id,title,subtitle,num_rooms,square_meter,price,date)

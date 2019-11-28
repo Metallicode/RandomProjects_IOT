@@ -15,7 +15,7 @@ class TeleBot:
             self.subscribers = []
             self.bot = self.updater.bot
 
-            with open("libs/telebot_subscribers.txt", "r") as f:
+            with open("data//telebot_subscribers.txt", "r") as f:
                   for i in f.readlines():
                         if i:
                               i = i.split(',')
@@ -51,15 +51,13 @@ class TeleBot:
             self.updater.idle()
 
       def Start(self, bot, update):
-            print("start")
-            pass
-
+            start_text = """Hi There!\nI Am ScrapeBot.\n\nMy commands are:\n/subscribe\n/mute\n/news\n/set [city,max_price,min_rooms] {city name}\n/d_{item_id}"""
+            self.bot.send_message(chat_id=update.message.chat_id, text=start_text)
+            
       def Save_To_File(self):
-            with open("libs/telebot_subscribers.txt", "w") as f:
+            with open("data//telebot_subscribers.txt", "w") as f:
                   for i in range(len(self.subscribers)):
                         new_str = f"{self.subscribers[i]['subscriber_id']},{self.subscribers[i]['mute']}"
-                        if i != len(self.subscribers)-1:
-                              new_str=new_str+"\n"
                         f.write(new_str)
                   
       def Subscribe(self, bot, update):

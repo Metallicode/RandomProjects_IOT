@@ -1,0 +1,5 @@
+max_price,4000
+min_rooms,2
+city,telaviv
+HTML_File_Location,file://C:/your/file/location/dira/html/view_data.html
+Telegram_bot_API_Key,your:api_key

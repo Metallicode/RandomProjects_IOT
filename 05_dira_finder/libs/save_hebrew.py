@@ -3,17 +3,17 @@ import base64
 from libs.dira_item import Dira
 
 def save_list_encoded(myData):
-      with open('data.csv', 'w') as myFile:
+      with open('data//data.csv', 'w') as myFile:
           writer = csv.writer(myFile)
           writer.writerows([base64.b64encode(i.encode()) for i in convert_to_strings(myData)])
 
 def save_to_favorite(data):
-      with open('favorite_items.txt', 'a', encoding="utf-8") as myFile:
+      with open('data//favorite_items.txt', 'a', encoding="utf-8") as myFile:
           myFile.write(data)
 
 def read_encoded_as_list():
       new_list = []
-      with open('data.csv', newline='') as File:  
+      with open('data//data.csv', newline='') as File:  
           reader = csv.reader(File)
           for row in reader:
               new_list.append(base64.b64decode(bytes("".join([chr(int(i)) for i in row]), 'utf-16', "ignore")).decode("utf-8"))

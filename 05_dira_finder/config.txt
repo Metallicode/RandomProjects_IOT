@@ -1,5 +1,0 @@
-max_price,4000
-min_rooms,2
-city,telaviv
-HTML_File_Location,
-Telegram_bot_API_Key,

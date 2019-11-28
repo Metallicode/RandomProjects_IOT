@@ -16,8 +16,23 @@
 	data={"message": JSON.stringify(item)};
 	
 	$.post("http://192.168.1.11:8000", data , function(data, status){
-	console.log("Data: " + data + "Status: " + status);
-	$("#item"+id+"_text_input").val("")
+		console.log("Data: " + data + "Status: " + status);
+		$("#item"+id+"_text_input").val("")
 	});
 	
 	}
+	
+	$(function(){
+		
+		$(".item_id").click(function(e){		
+			console.log(e.target.innerText);	
+
+			data={"item_id":e.target.innerText};
+					
+			$.post("http://192.168.1.11:8000", data , function(data, status){
+					console.log(data + "Status: " + status);
+					$("#item"+e.target.innerText+"_id").text(data);
+				});
+		});
+		
+	});
