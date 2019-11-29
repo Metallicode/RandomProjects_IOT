@@ -11,6 +11,13 @@ def save_to_favorite(data):
       with open('data//favorite_items.txt', 'a', encoding="utf-8") as myFile:
           myFile.write(data)
 
+def read_favorite_items():
+      favorites_lst = []
+      with open('data//favorite_items.txt', 'r', encoding="utf-8") as f:
+            for i in f.readlines():
+                  favorites_lst.append(eval(i))
+      return favorites_lst
+
 def read_encoded_as_list():
       new_list = []
       with open('data//data.csv', newline='') as File:  

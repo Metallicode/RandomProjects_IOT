@@ -1,1 +1,1 @@
-"C:\Users\grysd\AppData\Local\Programs\Python\Python36\python.exe" "C:\Users\grysd\Desktop\dira\main.py"
+"C:\path\to\Python\Python36\python.exe" "C:\path\to\dira\main.py"

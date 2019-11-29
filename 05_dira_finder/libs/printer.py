@@ -13,8 +13,9 @@ def Print_All_Data(data):
             print("************************\n")
 
 def Make_HTML(data):
-      style = "<link rel='stylesheet' type='text/css' href='style.css'>"    
-      strTable = f"<html>"+style+"<body><h1>Metallibord</h1><table><tr><th></th></tr>"
+      style = "<link rel='stylesheet' type='text/css' href='style.css'/>"
+      get_favorites_btn = f"<input type='button' id='get_favorites_btn' onclick='get_favorites(event)' class='button' value='Get Favorites'/>"
+      strTable = f"<html>{style}<body><h1>Metallibord</h1>{get_favorites_btn}<table id='items_table'><tr><th></th></tr>"
  
       for i in range(len(data)):
             item_id = f"<a class='item_id' id='item{data[i].item_id}_id'>{data[i].item_id}</a>"
@@ -25,8 +26,9 @@ def Make_HTML(data):
             item_date = f"<p id='item{data[i].item_id}_date'>{data[i].date}</p>"
             text_input = f"<input class='item_text_input' id='item{data[i].item_id}_text_input' type='text'/>"
             item_save_btn = f"<input type='button' item_id='{data[i].item_id}' onclick='btn_click(event)' class='button' value='Save'/>"
+            item_details = f"<p class='item_details' id='item{data[i].item_id}_details'></p>"
             
-            strRW = f"<tr><td dir='rtl'>"+f"{item_date}{item_title}{item_subtitle}{item_num_spec}{item_id}{item_price}{text_input}{item_save_btn}"+ "</td></tr>"
+            strRW = f"<tr><td dir='rtl'>"+f"{item_date}{item_title}{item_subtitle}{item_num_spec}{item_id}{item_details}{item_price}{text_input}{item_save_btn}"+ "</td></tr>"
 
             strTable = strTable+strRW
 

@@ -3,6 +3,15 @@ html{
 	background-color:#003300;
 	color:#1aff1a;
 }
+
+#get_favorites_btn{
+	color:#1aff1a;
+	background-color:black;
+	border: 2px solid green;
+	margin-left:20%;
+	width: 60%;
+}
+
 .item_text_input{
 	width:70%;
 	padding:3px;
@@ -29,6 +38,12 @@ h5{
 	margin:10px;
 	float:left;
 }
+
+.favorites{
+	color:yellow;
+	padding:5px;
+}
+
 p{
 	font-size:0.8em;
 	padding-right:10px;
@@ -37,6 +52,7 @@ td{
 	font-size:1.5em;
 	border-bottom: 2px solid #1aff1a;
 	background-color:black;
+
 	padding-right:10px;
 	padding-left:10px;
 }
