@@ -1,1 +1,1 @@
-"C:\path\to\Python\Python36\python.exe" "C:\path\to\dira\main.py"
+"C:\Path\to\python.exe" "C:\Path\To\dira\main.py"

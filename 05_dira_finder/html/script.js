@@ -16,7 +16,7 @@
 	
 	data={"message": JSON.stringify(item)};
 	
-	$.post("http://localhost:8000", data , function(data, status){
+	$.post("http://192.168.1.11:8000", data , function(data, status){
 		console.log("Data: " + data + "Status: " + status);
 		$("#item"+id+"_text_input").val("")
 		$(e.target).parent().css("background-color", "#333300");
@@ -25,7 +25,7 @@
 	}
 	
 	function get_favorites(){
-		$.get("http://192.168.1.11:8000" , function(data, status){
+		$.get("http://localhost:8000" , function(data, status){
 			
 			$("#items_table tr").remove();
 			$("#get_favorites_btn").remove();

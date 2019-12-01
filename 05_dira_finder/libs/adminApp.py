@@ -29,7 +29,7 @@ if __name__ == "__main__":
             elif user_selection == "4":
                   printer.Make_HTML(SiteScrape.Get_Data())
                   print("html created\n")
-                  url = "file://C:/Users/grysd/Desktop/dira/html/view_data.html"
+                  url = "file://Path/To/dira/html/view_data.html"
                   webbrowser.open(url)
             elif user_selection == "5":
                   exit()
