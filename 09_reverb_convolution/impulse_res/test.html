@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+	#controls_div
+	{
+		padding:10px;
+	}
+	input
+	{
+		margin-top:10px;
+	}
+	</style>
+
+</head>
+<body>
+
+	<h1>impulse response</h1>
+	<div id="controls_div">
+
+	<input type="button" id="init_button" value="start audio context"/>
+	<br/>
+	<select id="sound_selection_box">
+	  <option value="drum_loop">drums</option>
+	  <option value="gtr">guitar</option>
+	  <option value="voice">voice</option>
+	</select>
+	<br/>
+	<input type="button" id="play_button" value="play"/>
+	<br/>
+	<select id="imp_selection_box">
+	  <option value="room">room</option>
+	  <option value="irHall">hall</option>
+	  <option value="GTR_AMP_SPRING">spring</option>
+	</select>
+	<br/>
+	<input type="range" min="0.0" max="1.0" value="1.0" step="0.01"  id="mix_range" />
+
+	</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script>
+var audioCtx;
+var source;
+var reverbSoundArrayBuffer;
+var reverb;
+var reverb_gain = null;
+var gain = null;
+var is_playing = false;
+var buffer_data;
+
+
+function set_loop(data_name) {
+
+	source = audioCtx.createBufferSource();
+	var req = create_request(data_name+".wav");
+	req.onload = function() {
+	var audioData = req.response;
+	audioCtx.decodeAudioData(audioData, function(buffer) {
+		buffer_data = buffer;
+		source.buffer = buffer;
+		source.connect(reverb);
+		reverb.connect(reverb_gain);
+		source.connect(gain);
+		reverb_gain.connect(audioCtx.destination);
+		gain.connect(audioCtx.destination);
+		source.loop = true;
+	  },
+	  function(e){ console.log("Error with decoding audio data" + e.err); });
+	}
+	req.send();
+}
+
+function set_impulse(impulse_name){
+
+	var req = create_request(impulse_name+".ogg");
+
+	req.onload = function () {
+		reverbImpolseResponse = req.response;
+		reverbSoundArrayBuffer = base64ToArrayBuffer(reverbImpolseResponse);
+		audioCtx.decodeAudioData(reverbSoundArrayBuffer, function (buffer) {reverb.buffer = buffer;},function (e) {alert('Reverb Error ' + e.err);});
+	}
+	req.send();
+}
+
+function create_request(req_name){
+	var request = new XMLHttpRequest();
+	request.open('GET', 'https://raw.githubusercontent.com/Metallicode/theMusicBoat/master/audio_files/'+req_name, true);
+	request.responseType = 'arraybuffer';
+	return request;
+}
+
+function create_new_audio_player(){
+	source = audioCtx.createBufferSource();
+	source.loop = true;
+	source.buffer = buffer_data;
+	source.connect(reverb);
+	source.connect(gain);	
+}
+
+
+//the reverb convolotion buffer function
+function base64ToArrayBuffer(base64) {
+	var base64_fix = _arrayBufferToBase64(base64);
+	var binaryString = window.atob(base64_fix);
+	var len = binaryString.length;
+	var bytes = new Uint8Array(len);
+	for (var i = 0; i < len; i++) {
+		bytes[i] = binaryString.charCodeAt(i);
+	}
+	return bytes.buffer;
+}
+//dont ask... this is the reverb halper to convert the file data to base 64
+function _arrayBufferToBase64(buffer) {
+	var binary = '';
+	var bytes = new Uint8Array(buffer);
+	var len = bytes.byteLength;
+	for (var i = 0; i < len; i++) {
+		binary += String.fromCharCode(bytes[i]);
+	}
+	return window.btoa(binary);
+}
+
+
+$(function(){
+	$("#init_button").click(function(){
+		audioCtx = new AudioContext();
+		reverb = audioCtx.createConvolver();
+		reverb_gain = audioCtx.createGain();
+		reverb_gain.gain.setValueAtTime(0.0, audioCtx.currentTime);
+		gain = audioCtx.createGain();
+		
+		set_loop("drum_loop");
+		set_impulse("room");
+		$(this).hide();
+	});
+	
+	$("#play_button").click(function(){
+		if (is_playing == true){
+			source.stop(0);
+		}
+		else{
+			create_new_audio_player();
+			source.start(0);
+		}
+		is_playing = !is_playing;
+	});
+
+	$("#mix_range").on("input", function () {
+        gain.gain.setValueAtTime($(this).val(), audioCtx.currentTime);
+		reverb_gain.gain.setValueAtTime(1.0-$(this).val(), audioCtx.currentTime);
+    });
+	
+	$("select").change(function(){
+		if($(this).attr('id') == "imp_selection_box"){
+			console.log("impulse selection");
+			set_impulse($(this).val());	
+		}else{
+			console.log("loop selection");
+			console.log($(this).val());
+			set_loop($(this).val());	
+		}
+	
+	});
+
+});
+</script>
+
+</body>
+</html>
