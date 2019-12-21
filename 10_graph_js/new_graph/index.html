@@ -13,30 +13,43 @@
     <div id="canvasHolder">
 
         <canvas id="myCanvas" width="1200" height="500" style="border:1px solid #000000;"></canvas>
+        <canvas id="myCanvasLayer" width="1200" height="500" style="border:1px solid #000000;"></canvas>
     </div>
 
     <br />
-    <div id="controles" class="form-group">
-        <lable>Locator:</lable>
-        <br />
-        <input id="x_locator" class="slider" oninput="locate_x(event)" type="range" value="0.0" min="0.0" max="1.0" step="0.001" />
-        <br />
-        <lable>Zoom:</lable>
-        <br />
-        <input id="zoom" class="slider" oninput="zoom_x(event)" min="0.01" max="1.0" value="1.0" step="0.001" type="range" />
-        <br />
-        <br />
-        <input type="button" class="btn btn-primary" onclick="resetData()" value="Generate Random Data" />
-        <br />
-        <br />
-        <lable>Num of Points:</lable>
-        <input type="number" value="50" min="2" max="800" id="new_data_length" />
-        <lable>Max Value:</lable>
-        <input type="number" value="800" min="3" max="10000" id="new_data_amp" />
-        <br />
-        <br />
-        <input type="button" class="btn btn-success" onclick="call_api()" value="get real data from API" />
+    <div id="controles"  class="row form-group">
 
+        <div class="col-sm-5" id="showControls">
+            <lable>Locator:</lable>
+            <br />
+            <input id="x_locator" class="slider" oninput="locate_x(event)" type="range" value="0.0" min="0.0" max="1.0" step="0.001" />
+            <br />
+            <lable>Zoom:</lable>
+            <br />
+            <input id="zoom" class="slider" oninput="zoom_x(event)" min="0.01" max="1.0" value="1.0" step="0.001" type="range" />
+            <br />
+            <br />
+            <input type="button" class="btn btn-primary" onclick="resetData()" value="Generate Random Data" />
+            <br />
+            <br />
+            <lable>Num of Points:</lable>
+            <input type="number" value="50" min="2" max="800" id="new_data_length" />
+            <lable>Max Value:</lable>
+            <input type="number" value="800" min="3" max="10000" id="new_data_amp" />
+            <br />
+            <br />
+            <input type="button" class="btn btn-success" onclick="call_api()" value="Get Real Data From API" />
+        </div>
+
+        <div class="col-sm-7" id="showData">
+            <h3>Data View:</h3>
+            <br />
+            <p>Start Point: <span id="start_point">0</span></p>
+            <p>Zoom: <span id="zoom_level">0.0</span></p>
+            <p>Max Value: <span id="max_volume">0.0</span></p>
+            <p>Min Value: <span id="min_volume">0.0</span></p>
+            <input type="button" class="btn btn-success" onclick="toggleDynamics()" value="Toggle Dynamics" />
+        </div>
     </div>
 
 

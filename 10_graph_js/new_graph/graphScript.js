@@ -3,11 +3,22 @@ var graphWidth;
 var graphMinHeight
 var graphHeight;
 var graph_start;
+var graph_zoom;
 var length_after_zoom;
 var canvas;
 var ctx;
 var logging = true;
 var new_data_view;
+var currentMin;
+var currentMax;
+var current_x_points;
+
+var minPoint;
+var maxPoint;
+
+var canvasLayer;
+var ctxLayer;
+var showDynamix = false;
 
 $(function () {
 
@@ -17,12 +28,17 @@ $(function () {
     data_to_drow = [];
     graphWidth = $("#myCanvas").attr("width");
     graphHeight = $("#myCanvas").attr("height");
+    $("#canvasHolder").css("height", graphHeight);
     $("#controles").css("width", graphWidth);
     graph_start = 0;
     graphMinHeight = 0;
     length_after_zoom = 0;
+    currentMin = 0;
+    currentMax = 0;
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
+    canvasLayer = document.getElementById("myCanvasLayer");
+    ctxLayer = canvasLayer.getContext("2d");
 
 });
 
@@ -32,12 +48,19 @@ function log(message) {
 
 function resetData() {
     if (logging === true) log("data reset"); 
-    $("#zoom").val(1.0);
-    $("#x_locator").val(0.0);
+    resetSliders();
     current_data = createRandomData($("#new_data_length").val(), graphMinHeight, $("#new_data_amp").val());
     length_after_zoom = current_data.length;
     data = fit(current_data);
     drow(data);
+    viewChange(0, data.length);
+    clearDynamics();
+    showDynamix = false;
+}
+
+function resetSliders() {
+    $("#zoom").val(1.0);
+    $("#x_locator").val(0.0);
 }
 
 function call_api() {
@@ -51,6 +74,10 @@ function call_api() {
             length_after_zoom = current_data.length;
             data = fit(current_data);
             drow(data);
+            resetSliders();
+            viewChange(0, length_after_zoom);
+            clearDynamics();
+            showDynamix = false;
         });
     });
 
@@ -67,7 +94,7 @@ function locate_x(e) {
 function zoom_x(e) {
     if (logging === true) log("zoom_x");
     length_after_zoom = Math.floor(current_data.length * e.target.value);
-
+    graph_zoom = e.target.value;
     viewChange(graph_start, length_after_zoom + graph_start);
 }
 
@@ -78,7 +105,6 @@ function viewChange(start, len) {
     if (len > current_data.length ) {
         len = current_data.length;
         start = current_data.length - length_after_zoom;
-
     }
 
     for (i = start; i < len; i++) {
@@ -87,6 +113,37 @@ function viewChange(start, len) {
 
     new_data_view = fit(new_data_view);
     drow(new_data_view);
+
+
+    $("#start_point").text(graph_start);
+    $("#zoom_level").text((1.0 - graph_zoom).toFixed(2));
+    $("#max_volume").text(currentMax);
+    $("#min_volume").text(currentMin);
+
+
+
+    just_y = [];
+
+    for (var i = 0; i < new_data_view.length; i++) {
+        just_y.push(new_data_view[i].y);
+    }
+
+
+    minPoint = {
+        x: current_x_points[just_y.indexOf(Math.min(...just_y))],
+        y: Math.min(...just_y)
+    }
+
+
+    maxPoint = {
+        x: current_x_points[just_y.indexOf(Math.max(...just_y))],
+        y: Math.max(...just_y)
+    }
+
+    if (showDynamix === true) {
+        showDynamics();
+    }
+    
 }
 
 function createRandomData(len, min = 0, max = graphHeight) {
@@ -129,6 +186,9 @@ function normalize_y(dataArr) {
 
     oldMin = Math.min(...dataArr);
 
+    currentMin = oldMin;
+    currentMax = oldMax;
+
     console.log("max " + oldMax + " " + "min " + oldMin);
 
     for (var i = 0; i < dataArr.length; i++) {
@@ -163,6 +223,7 @@ function fit(data_array) {
     if (numOfPoints < canvas.width) {
 
         graph_x_points = calc_points_index(numOfPoints);
+        current_x_points = graph_x_points;
 
         for (i = 0; i < data_array.length; i++) {
             data_to_drow.push({ x: graph_x_points[i], y: graphHeight - data_array[i] });
@@ -196,5 +257,32 @@ function drow(data) {
         ctx.lineCap = 'round';
         ctx.stroke();
     }
+
+}
+
+function toggleDynamics(){
+    showDynamix = !showDynamix;
+
+    if (showDynamix) {
+        showDynamics();
+    } else {
+        clearDynamics();
+    }
+
+}
+
+function clearDynamics() {
+    ctxLayer.clearRect(0, 0, graphWidth, graphHeight);
+
+}
+
+function showDynamics() {
+    clearDynamics();
+    ctxLayer.beginPath();
+    ctxLayer.moveTo(minPoint.x, minPoint.y);
+    ctxLayer.lineTo(maxPoint.x, maxPoint.y);
+    ctxLayer.lineWidth = 2;
+    ctxLayer.strokeStyle = 'red';
+    ctxLayer.stroke();
 
 }

@@ -2,10 +2,23 @@
     padding: 10px;
     background-color: #898989;
     color: white;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+
+#showData{
+    
+    padding:10px;
+
 }
 
 h2 {
     text-align: left;
+}
+
+#showData {
+    background-color: #1a1a1a;
+    color: white;
 }
 
 #controles {
@@ -13,10 +26,10 @@ h2 {
     border: 1px solid black;
     text-align: left;
     background-color: #363e36;
+    margin: 0px;
 }
 
 #canvasHolder{
-
 
 }
 
@@ -26,4 +39,16 @@ h2 {
 
 #myCanvas {
     background-color: #1a1a1a;
+    position: absolute;
+    left: 010px;
+    top: 55px;
+    z-index:1;
+    
+}
+
+#myCanvasLayer {
+    position: absolute;
+    left: 010px;
+    top: 55px;
+    z-index: 10;
 }
