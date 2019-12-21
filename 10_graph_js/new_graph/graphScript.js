@@ -1,5 +1,6 @@
 var current_data;
 var graphWidth; 
+var graphMinHeight
 var graphHeight;
 var graph_start;
 var length_after_zoom;
@@ -10,12 +11,15 @@ var new_data_view;
 
 $(function () {
 
+
     if (logging === true) log("init script");
 
     data_to_drow = [];
     graphWidth = $("#myCanvas").attr("width");
     graphHeight = $("#myCanvas").attr("height");
+    $("#controles").css("width", graphWidth);
     graph_start = 0;
+    graphMinHeight = 0;
     length_after_zoom = 0;
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
@@ -30,10 +34,28 @@ function resetData() {
     if (logging === true) log("data reset"); 
     $("#zoom").val(1.0);
     $("#x_locator").val(0.0);
-    current_data = createRandomData($("#new_data_length").val());
+    current_data = createRandomData($("#new_data_length").val(), graphMinHeight, $("#new_data_amp").val());
     length_after_zoom = current_data.length;
     data = fit(current_data);
     drow(data);
+}
+
+function call_api() {
+
+    newData = [];
+
+    $.getJSON("https://raw.githubusercontent.com/Metallicode/RandomProjects_IOT/master/random_data_halpers/data.json", function (result) {
+        $.each(result, function (i, field) {
+            newData.push(field * 1);
+            current_data = newData;
+            length_after_zoom = current_data.length;
+            data = fit(current_data);
+            drow(data);
+        });
+    });
+
+
+
 }
 
 function locate_x(e) {
@@ -45,7 +67,6 @@ function locate_x(e) {
 function zoom_x(e) {
     if (logging === true) log("zoom_x");
     length_after_zoom = Math.floor(current_data.length * e.target.value);
-    console.log("length_after_zoom" + length_after_zoom);
 
     viewChange(graph_start, length_after_zoom + graph_start);
 }
@@ -72,7 +93,7 @@ function createRandomData(len, min = 0, max = graphHeight) {
     if (logging === true) log("createRandomData");
     dataarr = [];
     for (i = 0; i < len; i++) {
-        dataarr.push(Math.random() * (max - min) + min);
+        dataarr.push(Math.random() * (max - min) + min);   
     }
     return dataarr;
 }
@@ -88,6 +109,33 @@ function linspace(a, b, n) {
         ret[i] = (i * b + (n - i) * a) / n
     }
     return ret
+}
+
+function scaleValue(value, from, to) {
+    var scale = (to[1] - to[0]) / (from[1] - from[0]);
+    var capped = Math.min(from[1], Math.max(from[0], value)) - from[0];
+    return ~~(capped * scale + to[0]); //~~ is used as Math.floor
+}
+
+function normalize_y(dataArr) {
+
+    if (logging === true) log("normalize_y");
+
+    fixedArr = [];
+
+    valueCheckArr = [];
+
+    oldMax = Math.max(...dataArr); //... spread array to args
+
+    oldMin = Math.min(...dataArr);
+
+    console.log("max " + oldMax + " " + "min " + oldMin);
+
+    for (var i = 0; i < dataArr.length; i++) {
+        fixedArr.push(scaleValue(dataArr[i], [oldMin, oldMax], [graphMinHeight, graphHeight]) );
+    }
+
+    return fixedArr;
 }
 
 function calc_points_index(num_of_points) {
@@ -110,6 +158,7 @@ function fit(data_array) {
     if (logging === true) log("fit");
     data_to_drow = [];
     numOfPoints = data_array.length;
+    data_array = normalize_y(data_array);
 
     if (numOfPoints < canvas.width) {
 
@@ -143,7 +192,7 @@ function drow(data) {
         ctx.moveTo(data[i].x, data[i].y);
         ctx.lineTo(data[i + 1].x, data[i + 1].y);
         ctx.lineWidth = 1;
-        ctx.strokeStyle = 'red';
+        ctx.strokeStyle = '#2fff00';
         ctx.lineCap = 'round';
         ctx.stroke();
     }

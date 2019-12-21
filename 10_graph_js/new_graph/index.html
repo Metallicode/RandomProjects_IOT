@@ -9,23 +9,37 @@
 </head>
 <body>
 
-    <canvas id="myCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
+    <h2>MetalliGraph</h2>
+    <div id="canvasHolder">
+
+        <canvas id="myCanvas" width="1200" height="500" style="border:1px solid #000000;"></canvas>
+    </div>
+
     <br />
-    <hr />
     <div id="controles" class="form-group">
         <lable>Locator:</lable>
         <br />
         <input id="x_locator" class="slider" oninput="locate_x(event)" type="range" value="0.0" min="0.0" max="1.0" step="0.001" />
         <br />
-        <lable>zoom:</lable>
+        <lable>Zoom:</lable>
         <br />
         <input id="zoom" class="slider" oninput="zoom_x(event)" min="0.01" max="1.0" value="1.0" step="0.001" type="range" />
         <br />
-        <input type="button" class="btn btn-primary" onclick="resetData()" value="reset data" />
-        <input type="number"  value="50" min="2" max="800" id="new_data_length" />
-
+        <br />
+        <input type="button" class="btn btn-primary" onclick="resetData()" value="Generate Random Data" />
+        <br />
+        <br />
+        <lable>Num of Points:</lable>
+        <input type="number" value="50" min="2" max="800" id="new_data_length" />
+        <lable>Max Value:</lable>
+        <input type="number" value="800" min="3" max="10000" id="new_data_amp" />
+        <br />
+        <br />
+        <input type="button" class="btn btn-success" onclick="call_api()" value="get real data from API" />
 
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

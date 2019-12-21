@@ -1,7 +1,29 @@
-﻿#controles{
-    padding:10px;
+﻿body {
+    padding: 10px;
+    background-color: #898989;
+    color: white;
+}
+
+h2 {
+    text-align: left;
+}
+
+#controles {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: left;
+    background-color: #363e36;
+}
+
+#canvasHolder{
+
+
 }
 
 .slider {
     width: 400px;
+}
+
+#myCanvas {
+    background-color: #1a1a1a;
 }
