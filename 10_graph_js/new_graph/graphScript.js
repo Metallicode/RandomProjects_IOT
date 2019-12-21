@@ -120,8 +120,8 @@ function viewChange(start, len) {
 
     $("#start_point").text(graph_start);
     $("#zoom_level").text(zoom_value);
-    $("#max_volume").text(currentMax);
-    $("#min_volume").text(currentMin);
+    $("#max_volume").text(currentMax.toFixed(2));
+    $("#min_volume").text(currentMin.toFixed(2));
 
 
 
@@ -145,7 +145,7 @@ function viewChange(start, len) {
 
 
 
-    $("#magnitude").text(currentMag);
+    $("#magnitude").text(currentMag.toFixed(2));
 
 
 
