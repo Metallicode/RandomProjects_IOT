@@ -16,7 +16,6 @@
         <canvas id="myCanvasLayer" width="1200" height="500" style="border:1px solid #000000;"></canvas>
     </div>
 
-    <br />
     <div id="controles"  class="row form-group">
 
         <div class="col-sm-5" id="showControls">
@@ -42,12 +41,13 @@
         </div>
 
         <div class="col-sm-7" id="showData">
-            <h3>Data View:</h3>
-            <br />
+            <h3 id="viewDataTitle">Data View:</h3>
+   
             <p>Start Point: <span id="start_point">0</span></p>
-            <p>Zoom: <span id="zoom_level">0.0</span></p>
+            <p>Zoom: <span id="zoom_level">1.00</span></p>
             <p>Max Value: <span id="max_volume">0.0</span></p>
             <p>Min Value: <span id="min_volume">0.0</span></p>
+            <p>Change Magnitude: <span id="magnitude">0.0</span></p>
             <input type="button" class="btn btn-success" onclick="toggleDynamics()" value="Toggle Dynamics" />
         </div>
     </div>

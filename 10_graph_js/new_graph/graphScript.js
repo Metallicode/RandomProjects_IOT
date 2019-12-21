@@ -12,6 +12,7 @@ var new_data_view;
 var currentMin;
 var currentMax;
 var current_x_points;
+var currentMag = 0.0;
 
 var minPoint;
 var maxPoint;
@@ -33,6 +34,7 @@ $(function () {
     graph_start = 0;
     graphMinHeight = 0;
     length_after_zoom = 0;
+    graph_zoom = 1.0;
     currentMin = 0;
     currentMax = 0;
     canvas = document.getElementById("myCanvas");
@@ -114,9 +116,10 @@ function viewChange(start, len) {
     new_data_view = fit(new_data_view);
     drow(new_data_view);
 
+    zoom_value = (((1.0 - ((graph_zoom) * 1)) + 1.0).toFixed(2)) ;
 
     $("#start_point").text(graph_start);
-    $("#zoom_level").text((1.0 - graph_zoom).toFixed(2));
+    $("#zoom_level").text(zoom_value);
     $("#max_volume").text(currentMax);
     $("#min_volume").text(currentMin);
 
@@ -139,6 +142,12 @@ function viewChange(start, len) {
         x: current_x_points[just_y.indexOf(Math.max(...just_y))],
         y: Math.max(...just_y)
     }
+
+
+
+    $("#magnitude").text(currentMag);
+
+
 
     if (showDynamix === true) {
         showDynamics();
@@ -188,6 +197,8 @@ function normalize_y(dataArr) {
 
     currentMin = oldMin;
     currentMax = oldMax;
+    currentMag = currentMax - currentMin;
+
 
     console.log("max " + oldMax + " " + "min " + oldMin);
 
@@ -278,6 +289,7 @@ function clearDynamics() {
 
 function showDynamics() {
     clearDynamics();
+    ctxLayer.setLineDash([5, 3]);
     ctxLayer.beginPath();
     ctxLayer.moveTo(minPoint.x, minPoint.y);
     ctxLayer.lineTo(maxPoint.x, maxPoint.y);

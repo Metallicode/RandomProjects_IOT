@@ -8,8 +8,12 @@
 
 #showData{
     
-    padding:10px;
+    padding:5px;
 
+}
+
+#viewDataTitle {
+    text-decoration: underline;
 }
 
 h2 {
@@ -19,14 +23,16 @@ h2 {
 #showData {
     background-color: #1a1a1a;
     color: white;
+    padding-left:15px;
 }
 
 #controles {
     padding: 10px;
-    border: 1px solid black;
+    
     text-align: left;
     background-color: #363e36;
     margin: 0px;
+    margin-top:5px;
 }
 
 #canvasHolder{
