@@ -1,0 +1,24 @@
+#scheduleHolder {
+  background-color: lightgray;
+  padding:10px;
+
+}
+
+ul {
+  list-style-type: none;
+  padding: 5px;
+}
+
+li {
+
+  background-color: dimgrey;
+  padding: 5px;
+  color: white;
+}
+
+.schedule_day_title {
+  background-color: dimgrey;
+  padding: 5px;
+  color: white;
+  margin-right:5px;
+}

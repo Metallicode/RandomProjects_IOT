@@ -1,0 +1,6 @@
+<div id="teamsHolder">
+  <span class="teamCheckbox" *ngFor="let team of teams">
+    <input value="{{team.team_id}}" type="checkbox" (change)="checkbox_changed($event)" checked />
+    <label>{{team.team_name}} </label>
+  </span>
+</div>

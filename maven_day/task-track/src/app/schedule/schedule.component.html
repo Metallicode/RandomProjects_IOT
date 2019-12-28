@@ -1,0 +1,13 @@
+<div id="scheduleHolder">
+  <div>
+    <span *ngFor="let day of get_dates()" class="schedule_day_title">{{day | date}}</span>
+  </div>
+  <ul>
+    <li *ngFor="let emp_schedule of current_emp_view">
+      <app-employee-schedule class="emp_schedule" ></app-employee-schedule>
+    </li>
+  </ul>
+
+</div>
+
+

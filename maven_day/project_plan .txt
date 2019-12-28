@@ -1,0 +1,59 @@
+Maven day project plan:
+
+***************************************************************************************************
+
+API:
+	GET work_data:
+	returns: 
+		{
+		employees: [{first_name:"", last_name:"", emp_id:"", Team_id::""}....],
+		teams: [{team_name:"", team_id:"", team_index:number}] 
+		}
+
+
+	GET tasks: 
+	returns: 
+		{
+		tasks: [{task_title:"", task_id:"", task_start:"", emp_id:"", task_length:number}....]
+		}
+
+
+***************************************************************************************************
+
+app structure:
+
+	Models:
+		employee
+		task
+		team
+
+	Services:
+		app-manager:
+			all_employees
+			all_tasks
+			all_teams
+			current_view - emp post filter list
+			time_frame
+
+			order_employees_by_teams() - order current_view by teams order
+			change_view(Team_Name) - toggle team view (on/off)
+			change_emp_order(emp_id, from_index, to_index) - for dragging
+			get_emp_schedule(emp_id, length=time_frame)
+			
+		api-layer:
+			get_work_data()
+			get_tasks()
+
+
+	Components:
+		<team-filter>
+		<employees-list>
+		<schedule>
+		<employee-schedule>
+
+
+
+
+
+
+
