@@ -1,23 +1,38 @@
+
+##============= Project Solution =================#
+
 ##Values Dict
-roman_values = {'i':1, 'v':5, 'x':10, 'l':50, 'c':100}
+rv = {'i':1, 'v':5, 'x':10, 'l':50, 'c':100}
 
-
-##Returns the total value to subtract 
-def value_to_sub(roman):
-      values_to_sub = []
-      for i in range(len(roman)-1):
-            if roman_values[roman[i]] < roman_values[roman[i+1]]:
-                  values_to_sub.append(roman_values[roman[i]]*2)
-      return sum(values_to_sub)
-
-##converts the roman number to int
-def convert_to_int(roman):
-      total_sum = sum([roman_values[x] for x in roman])
-      return total_sum-value_to_sub(roman)
+##converts the roman number to int in one line ;)
+def convert_to_int(r):
+      return sum([rv[x] for x in r])-sum([rv[r[i]]*2 for i in range(len(r)-1) if rv[r[i]] < rv[r[i+1]]])
 
 
 
-#### Test (test is good if nothing prints..)
+
+
+
+##============= Longer version... =================#
+####Returns the total value to subtract 
+##def value_to_sub(roman):
+##      values_to_sub = []
+##      for i in range(len(roman)-1):
+##            if rv[roman[i]] < rv[roman[i+1]]:
+##                  values_to_sub.append(rv[roman[i]]*2)
+##      return sum(values_to_sub)
+##
+####converts the roman number to int
+##def convert_to_int(roman):
+##      total_sum = sum([rv[x] for x in roman])
+##      return total_sum-value_to_sub(roman)
+
+
+
+
+
+##============= Test (test is good if nothing prints..) =================#
+
 all_roman_nums = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
                   "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
                   "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX",
