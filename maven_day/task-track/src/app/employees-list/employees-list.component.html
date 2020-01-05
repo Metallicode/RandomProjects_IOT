@@ -1,0 +1,11 @@
+<div id="listOfEmployeesHolder" >
+
+    <div id="emp_list_title">
+      Employees:
+    </div>
+
+  <ul>
+    <li *ngFor="let emp of employees"><span class="glyphicon glyphicon-user"></span> {{emp.First_name}} {{emp.Last_name}}</li>
+  </ul>
+
+</div>

@@ -1,0 +1,25 @@
+ul {
+  list-style-type: none;
+  padding:5px;
+}
+
+#listOfEmployeesHolder{
+  width:220px;
+  background-color:lightgray;
+  padding:10px;
+}
+
+li {
+  margin-left:5px;
+  background-color: dimgrey;
+  padding:10px;
+  color:white;
+}
+
+#emp_list_title {
+  margin-left:10px;
+  width:92%;
+  padding: 5px;
+  color: white;
+  background-color: dimgrey;
+}
