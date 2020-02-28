@@ -95,10 +95,6 @@ def get_hours():
     
 
 
-
-
-
-
 if __name__ == '__main__':
 
     main_app = App_State()

@@ -36,7 +36,7 @@ while inputs:
                   client, address = server.accept()
                   inputs.append(client)
                   print("connected to new client")
-                  t = Thread(target=query_thread, args=(client,"get_day"))
+                  t = Thread(target=query_thread, args=(client,"get_day", date.today()))
                   t.start()
                   
 
