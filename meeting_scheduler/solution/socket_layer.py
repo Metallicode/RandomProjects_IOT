@@ -16,13 +16,18 @@ def query_thread(client,query_type,data=None):
             client.send(json.dumps(res, default=lambda o: o.__dict__).encode())
 
 
-
-
-
+#create db object
 db = Db_Layer()
 
+
+#read config file
+file = open("configuration", "r")
+config_data=[x.strip() for x in file.readlines()]
+config_data[1] = int(config_data[1])
+
+#init socket 
 server = socket.socket()
-server.bind(("192.168.1.12", 1234)) 
+server.bind((config_data[0], config_data[1]))
 server.listen(5)
 inputs = [server]
 print("starting server..")
@@ -32,6 +37,7 @@ print("starting server..")
 while inputs:
       readables, _, _ = select.select(inputs, [], [])
       for i in readables:
+            #new client connected
             if i is server:
                   client, address = server.accept()
                   inputs.append(client)
@@ -41,14 +47,16 @@ while inputs:
                   
 
             else:
+                  #new messaga from client
                   try:
                         data = i.recv(1024)
                         dataLst = data.decode().split("%")
+                        #get day message
                         if dataLst[0] == 'get_day':
                                t = Thread(target=query_thread, args=(i,"get_day", dataLst[1]))
                                t.start()
                                     
-                                    
+                        #new item from client     
                         else:
                               while("" in dataLst) : 
                                   dataLst.remove("")
@@ -57,9 +65,8 @@ while inputs:
 
                               t = Thread(target=query_thread, args=(i,"save",new_item))
                               t.start()
-                             
 
-                  
+                  #client disconnected             
                   except Exception as e:
                         print(e)
                         inputs.remove(i)
