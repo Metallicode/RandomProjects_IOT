@@ -38,15 +38,21 @@ def list_item_clicked(event):
     global infoLable
     infoLable['text']=(main_app.day_schedule.get_hour_data(event.widget.get(ANCHOR)[:13]).info)
     main_app.selected_hour = main_app.day_schedule.get_hour_data(event.widget.get(ANCHOR)[:13])
-    flip_btn(main_app.selected_hour.title == '')
+    flip_btn(new_btn,main_app.selected_hour.title == '')
     main_app.max_available(main_app.selected_hour.time)
 
 
-def flip_btn(bool):
+def flip_btn(btn, bool):
     if bool:
-        new_btn["state"] = "active"
+        btn["state"] = "active"
     else:
-        new_btn["state"] = "disabled"   
+        btn["state"] = "disabled"   
+
+
+def info_changed(event):
+    global save_btn
+    flip_btn(save_btn,event.widget.get('1.0','end-1c')!="")
+    
 
 def refresh_ui():
     global Lb1
@@ -60,6 +66,10 @@ def createMainWindow():
     global new_btn
     global Lb1
     global infoLable
+    global main_window
+
+    main_window = Tk()
+    main_window.title("Meet-allicode")
     Label(main_window, text='Date').grid(row=2, padx=15, pady=10)
 
     date_entry = Entry(main_window)
@@ -79,16 +89,18 @@ def createMainWindow():
     
     new_btn = Button(main_window, text="New", command=createNewDateWindow)
     new_btn.grid(row=5, column=2, padx=15, pady=10)
-    flip_btn(False)
+    flip_btn(new_btn, False)
+
 
 def createNewDateWindow():
     print("createNewDateWindow clicked")
     main_app.selected_length = 1
     global newWindow
+    global save_btn
     if newWindow is not None:
         newWindow.destroy()
     newWindow = Toplevel(main_window)
-    
+    newWindow.title("New Meeting...")
     Label(newWindow,text = "User").grid(column=0, row=0)
 
     combo = ttk.Combobox(newWindow, values=main_app.users)
@@ -107,9 +119,12 @@ def createNewDateWindow():
 
     Label(newWindow,text = "Info").grid(column=0, row=4)
     t = Text(newWindow, height=5,width=30)
+    t.bind("<KeyPress>", info_changed)
     t.grid(column=1, row=4, pady=2, padx=2)
     main_app.text_element = t
-    Button(newWindow, text="save", command=save_new_meeting).grid(row=5, column=3, padx=15, pady=10)
+    save_btn = Button(newWindow, text="save", command=save_new_meeting)
+    flip_btn(save_btn, False)
+    save_btn.grid(row=5, column=3, padx=15, pady=10)
 
 
 def date_changed(event):
@@ -141,12 +156,12 @@ def get_hours():
 if __name__ == '__main__':
 
     main_app = App_State()
-
+    main_window = None
     newWindow = None
-    main_window = Tk()
     Lb1 = None
     infoLable = None
     new_btn = None
+    save_btn = None
     createMainWindow()
 
     main_window.mainloop()

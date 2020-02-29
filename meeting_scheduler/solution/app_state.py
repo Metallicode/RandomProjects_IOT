@@ -38,12 +38,9 @@ class App_State:
                     count = False
                     break
                 counter+=1
-
-        print("counter",counter)
         return counter
         
             
-
     def send_message(self, data):
         print(f"new Meeting: {data}")
         self.socket_client.send(data)
