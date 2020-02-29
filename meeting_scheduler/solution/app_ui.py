@@ -33,6 +33,12 @@ def save_new_meeting():
 
     refresh_ui()
 
+def list_item_clicked(event):
+    global infoLable
+    infoLable['text']=(main_app.day_schedule.get_hour_data(event.widget.get(ANCHOR)[:13]).info)
+    
+    
+
 
 def refresh_ui():
     global Lb1
@@ -44,6 +50,7 @@ def refresh_ui():
 
 def createMainWindow():
     global Lb1
+    global infoLable
     Label(main_window, text='Date').grid(row=2, padx=15, pady=10)
 
     date_entry = Entry(main_window)
@@ -55,10 +62,14 @@ def createMainWindow():
     for i in range(len(main_app.day_schedule.schedule)):
         Lb1.insert(i,f"{main_app.day_schedule.schedule[i].time}  {main_app.day_schedule.schedule[i].title}")
 
+    Lb1.bind('<<ListboxSelect>>', list_item_clicked)
     Lb1.grid(row=3, column=0, columnspan=3)
 
+    infoLable = Label(main_window, text='')
+    infoLable.grid(row=4, pady=10)
+    
     new_btn = Button(main_window, text="New", command=createNewDateWindow)
-    new_btn.grid(row=4, column=2, padx=15, pady=10)
+    new_btn.grid(row=5, column=2, padx=15, pady=10)
    
 
 def createNewDateWindow():
@@ -125,6 +136,7 @@ if __name__ == '__main__':
     newWindow = None
     main_window = Tk()
     Lb1 = None
+    infoLable = None
     createMainWindow()
 
     main_window.mainloop()
