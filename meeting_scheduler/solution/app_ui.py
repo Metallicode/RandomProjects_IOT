@@ -3,7 +3,7 @@ from tkinter import ttk
 from app_state import App_State
 from datetime import date
 import datetime
-import meeting_model
+from models.meeting_model import Meeting_Factory
 
 
 def set_user(event):
@@ -23,10 +23,10 @@ def set_length(event):
 
 
 def save_new_meeting():
-    m = meeting_model.Meeting_Factory.create_meeting(main_app.selected_date,
+    m = Meeting_Factory.create_meeting(main_app.selected_date,
                                                      main_app.selected_hour, main_app.selected_length,
                                                      main_app.text_element.get('1.0','end-1c'), main_app.current_user)
-    main_app.send_message(meeting_model.Meeting_Factory.meeting_to_string(m).encode())
+    main_app.send_message(Meeting_Factory.meeting_to_string(m).encode())
     global newWindow
     if newWindow is not None:
         newWindow.destroy()

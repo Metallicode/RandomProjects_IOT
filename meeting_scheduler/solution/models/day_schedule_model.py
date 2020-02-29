@@ -1,4 +1,4 @@
-from hour_block_model import Hour_Block
+from models.hour_block_model import Hour_Block
 import json
 
 class Day_Schedule:

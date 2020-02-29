@@ -1,6 +1,6 @@
 import sqlite3
-from meeting_model import Meeting, Meeting_Factory
-from day_schedule_model import Day_Schedule
+from models.meeting_model import Meeting, Meeting_Factory
+from models.day_schedule_model import Day_Schedule
 
 from datetime import date
 

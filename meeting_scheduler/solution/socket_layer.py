@@ -1,6 +1,6 @@
 import socket
 import select
-from meeting_model import Meeting_Factory
+from models.meeting_model import Meeting_Factory
 from db_layer import Db_Layer
 from threading import Thread
 from datetime import date

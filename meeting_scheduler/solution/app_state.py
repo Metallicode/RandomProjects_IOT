@@ -1,6 +1,6 @@
 from datetime import date
 import socket
-from day_schedule_model import Day_Schedule
+from models.day_schedule_model import Day_Schedule
 
 class App_State:
     def __init__(self):
