@@ -8,19 +8,12 @@ from models.meeting_model import Meeting_Factory
 
 def set_user(event):
     main_app.current_user = main_app.users[event.widget.current()]
-    print("set_user clicked")
-
 
 def set_hour(event):
     main_app.selected_hour = event.widget.get()
-    print(event.widget.get())
-    print("set_hour clicked")
-
 
 def set_length(event):
     main_app.selected_length = event.widget.get()
-    print("set_length clicked")
-
 
 def save_new_meeting():
     m = Meeting_Factory.create_meeting(main_app.selected_date,
@@ -40,7 +33,6 @@ def list_item_clicked(event):
     main_app.selected_hour = main_app.day_schedule.get_hour_data(event.widget.get(ANCHOR)[:13])
     flip_btn(new_btn,main_app.selected_hour.title == '')
     main_app.max_available(main_app.selected_hour.time)
-
 
 def flip_btn(btn, bool):
     if bool:
@@ -87,7 +79,6 @@ def createMainWindow():
 
     main_window = Tk()
     main_window.title("Meet-allicode")
-    #Label(main_window, text='Date').grid(row=2, padx=15, pady=10)
 
     date_entry = Entry(main_window)
     date_entry.bind("<KeyPress>", date_changed)
