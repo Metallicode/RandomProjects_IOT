@@ -17,7 +17,7 @@ class App_State:
         self.day_schedule = Day_Schedule(self.socket_client.recv(1024))
         
         self.current_user = self.users[0]
-        self.selected_date = date.today()
+        self.selected_date = str(date.today())
         self.selected_hour = self.day_schedule.schedule[0].time
         
         self.selected_length = 0

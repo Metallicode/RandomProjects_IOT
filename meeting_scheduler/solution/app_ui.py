@@ -61,21 +61,44 @@ def refresh_ui():
     for i in range(len(main_app.day_schedule.schedule)):
         Lb1.insert(i,f"{main_app.day_schedule.schedule[i].time}  {main_app.day_schedule.schedule[i].title}")
    
+def nudge_date(direction):
+    global new_btn
+    date_str_list = [int(x) for x in main_app.selected_date.split("-")]
+    date = datetime.date(date_str_list[0],date_str_list[1],date_str_list[2])
+    if direction == ">":
+        date += datetime.timedelta(days=1)
+    elif direction == "<":
+        date -= datetime.timedelta(days=1)
+    main_app.selected_date = str(date)
+    date_entry.delete(first=0, last=20)
+    date_entry.insert(0,main_app.selected_date)
+    main_app.selected_hour = None
+    main_app.selected_length = 0
+    flip_btn(new_btn, False)
+    refresh_ui()
+    print(date)
 
 def createMainWindow():
     global new_btn
     global Lb1
     global infoLable
+    global date_entry
     global main_window
 
     main_window = Tk()
     main_window.title("Meet-allicode")
-    Label(main_window, text='Date').grid(row=2, padx=15, pady=10)
+    #Label(main_window, text='Date').grid(row=2, padx=15, pady=10)
 
     date_entry = Entry(main_window)
     date_entry.bind("<KeyPress>", date_changed)
     date_entry.insert(0,date.today())
     date_entry.grid(row=2, column=1) 
+
+    prev_day_btn = Button(main_window, text="<", command=lambda: nudge_date("<"))
+    prev_day_btn.grid(row=2, column=0, padx=15, pady=5)
+    next_day_btn = Button(main_window, text=">", command=lambda: nudge_date(">"))
+    next_day_btn.grid(row=2, column=2, padx=15, pady=5) 
+
 
     Lb1 = Listbox(main_window, width=30)
     for i in range(len(main_app.day_schedule.schedule)):
@@ -162,6 +185,7 @@ if __name__ == '__main__':
     infoLable = None
     new_btn = None
     save_btn = None
+    date_entry = None
     createMainWindow()
 
     main_window.mainloop()
