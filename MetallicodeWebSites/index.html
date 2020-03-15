@@ -48,6 +48,9 @@
 
         }
 
+        #course_page {
+            direction: rtl;
+        }
 
         .blink_me {
             animation: blinker 1s linear infinite;
@@ -66,149 +69,191 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" id="menuButton" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    תפריט <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i><img class="fa" id="remusirIcon" src="img/remuserIcon.png" /></i>
-                    <span class="light"></span> מטאליקוד
-                </a>
+    <div id="main_page">
+
+
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" id="menuButton" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        תפריט <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <i><img class="fa" id="remusirIcon" src="img/remuserIcon.png" /></i>
+                        <span class="light"></span> מטאליקוד
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">צור קשר</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about_metallicode">מי אני</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">שיעורים מוקלטים</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#courses">ONLINE קורסים</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#">ראשי</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
 
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">צור קשר</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about_metallicode">מי אני</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">שיעורים מוקלטים</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#courses">ONLINE קורסים</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">ראשי</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        <!-- Intro Header -->
+        <header class="intro">
+            <div class="intro-body" id="intro-element">
+                <div dir="rtl" class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h1 id="top_title" class="brand-heading">לימודי תיכנות On-Line</h1>
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body" id="intro-element">
-            <div dir="rtl" class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 id="top_title" class="brand-heading">לימודי תיכנות On-Line</h1>
+                            <h2 id="top_subtitle">
 
-                        <h2 id="top_subtitle">
+                                שיעורי תכנות אונליין.
+                                <br />
+                                קבוצות נוער ומבוגרים - מתאים לכל הרמות.
+                                <br />
+                                לימודים בשפות PYTHON    C#    JAVASCRIPT.
+                            </h2>
+                            <center>
 
-                            שיעורי תכנות אונליין.
-                            <br />
-                            קבוצות נוער ומבוגרים - מתאים לכל הרמות.
-                            <br />
-                            לימודים בשפות PYTHON    C#    JAVASCRIPT.
-                        </h2>
-                        <center>
-                           
-                            <button onclick="location.href='./course.html?c=metal'" id="learn_more_btn">
-                                <span>פרטים נוספים</span>
-                            </button>
-                        </center>
+                                <button onclick="OpenCourse('METAL');" id="learn_more_btn">
+                                    <span>פרטים נוספים</span>
+                                </button>
+                            </center>
 
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <hr />
+        <!-- courses Section -->
+        <section id="courses" class="content-section text-center">
+            <div class="download-section">
+                <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 id="alma-link" dir="rtl">הקורסים שלנו:</h2>
+                        <div>
+                            <img title="ללמוד פייתון" class="metallicode-app-img" course-name="py" src="img/metallicode_app_py.png" />
+                            <img title="ללמוד סי שארפ" class="metallicode-app-img" course-name="cs" src="img/metallicode_app_cs.png" />
+                            <img title="ללמוד ג'אווה סקריפט" class="metallicode-app-img" course-name="js" src="img/metallicode_app_js.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- courses Section -->
-    <section id="courses" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
+        <hr />
+
+        <!-- about Section -->
+        <section id="about_metallicode" class="content-section text-center">
+            <div class="about-section">
+                <div class="container">
+                    <div dir="rtl" class="col-lg-8 col-lg-offset-2">
+                        <h2 id="metalli-link" dir="rtl">מי זה מטאליקוד?</h2>
+                        <div>
+                            <img title="נעים להכיר!" class="metallicode-app-img" src="img/metallicode_about.png" />
+                        </div>
+                        <p id="about_metallicode_text">
+
+                            יליד 1983, מדריך להנדסת תוכנה, אמן סאונד ומפיק מוסיקלי.
+                            <br />
+                            מייסד של <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">מטאליקוד</a> - פרוייקט קהילתי ללימוד תיכנות מחשבים.
+                            <br />
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+            <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2 id="alma-link" dir="rtl">הקורסים שלנו:</h2>
-                    <div>
-                        <a href="./course.html?c=py"><img title="ללמוד פייתון" class="metallicode-app-img" src="img/metallicode_app_py.png" /></a>
-                        <a href="./course.html?c=cs"><img title="ללמוד סי שארפ" class="metallicode-app-img" src="img/metallicode_app_cs.png" /></a>
-                        <a href="./course.html?c=js"><img title="ללמוד ג'אווה סקריפט" class="metallicode-app-img" src="img/metallicode_app_js.png" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr />
-
-    <!-- about Section -->
-    <section id="about_metallicode" class="content-section text-center">
-        <div class="about-section">
-            <div class="container">
-                <div dir="rtl" class="col-lg-8 col-lg-offset-2">
-                    <h2 id="metalli-link" dir="rtl">מי זה מטאליקוד?</h2>
-                    <div>
-                        <img title="נעים להכיר!" class="metallicode-app-img" src="img/metallicode_about.png" />
-                    </div>
-                    <p id="about_metallicode_text">
-
-                        יליד 1983, מדריך להנדסת תוכנה, אמן סאונד ומפיק מוסיקלי.
-                        <br />
-                        מייסד של <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">מטאליקוד</a> - פרוייקט קהילתי ללימוד תיכנות מחשבים.
-                        <br />
-                        
+                    <h2 dir="rtl">צור קשר:</h2>
+                    <p dir="rtl">להרשמה ולפרטים נוספים:</p>
+                    <p>
+                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailRemuserImg" src="img/emailRemuser.png"></a>
                     </p>
+                    <br />
+                    <br />
+                    <h4>Social Media:</h4>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/Metallicode/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i> <span class="network-name">Youtube</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <hr />
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2 dir="rtl">צור קשר:</h2>
-                <p dir="rtl">להרשמה ולפרטים נוספים:</p>
-                <p>
-                    <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailRemuserImg" src="img/emailRemuser.png"></a>
-                </p>
-                <br />
-                <br />
-                <h4>Social Media:</h4>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a target="_blank" href="https://www.facebook.com/Metallicode/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i> <span class="network-name">Youtube</span></a>
-                    </li>
-                </ul>
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p>Copyright &copy; www.Metallicode.com 2020</p>
             </div>
-        </div>
-    </section>
+        </footer>
+
+    </div>
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; www.Metallicode.com 2020</p>
+    <div id="course_page">
+
+        <div id="course_page">
+            <h1 id="c_page_title"></h1>
+            <h4 id="c_page_subtitle"></h4>
+            <center>
+                <div id="video_div">
+                    <iframe id="py_video_element" class="video_element" width="560" height="315"
+                            src="https://www.youtube.com/embed/FSq6ghoEFq8"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+
+                    <iframe id="cs_video_element" class="video_element" width="560" height="315"
+                            src= "https://www.youtube.com/embed/JzBxVReAkL8"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+
+                    <iframe id="js_video_element" class="video_element" width="560" height="315"
+                            src="https://www.youtube.com/embed/CgQ3XlK8hk8"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </center>
+
+
+            <p id="c_page_text"></p>
         </div>
-    </footer>
+
+        <center>
+            <button id="back_btn">חזור</button>
+        </center>
+
+       
+
+    </div>
+
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
@@ -224,21 +269,73 @@
     <script src="js/grayscale.js"></script>
 
     <script>
+
         $(function () {
 
-            var images = ["Python", "CS", "JS", "METAL"];
-            var counter = 0;
-            setInterval(function () {
+            $("#course_page").hide();
 
-                if (counter == images.length) {
-                    counter = 0;
-                }
-
-                img_str = "./data/" + images[counter++] + ".jpg";
-                $('#intro-element').css("background-image", "url(" + img_str + ")");
-
-            }, 2000);
         });
+
+        $("#back_btn").click(function () {
+             $("#main_page").show();
+            $("#course_page").hide();
+        });
+
+
+        $(".metallicode-app-img").click(function (e) {
+
+            OpenCourse(e.target.getAttribute("course-name"));
+
+        });
+
+        function OpenCourse(course_name) {
+
+            $(".video_element").hide();
+            console.log(course_name);
+            var title = "";
+            var subtitle = "";
+            var text = "";
+            var url = "";
+            var image_name = "";
+
+            switch (course_name) {
+
+                case "py":
+                    title = "קורס פייתון";
+                    subtitle = "סייבר, AI ,Data Science";
+                    text = "";
+                    $("#py_video_element").show();
+                    image_name = "Python";
+                    break;
+                case "cs":
+                    title = "קורס סי שארפ";
+                    subtitle = "שפת העל של מיקרוסופט .net";
+                    text = "";
+                    $("#cs_video_element").show();
+                    image_name = "CS";
+                    break;
+                case "js":
+                    title = "קורס ג'אווה סקריפט";
+                    subtitle = "שפת התיכנות של האינטרנט";
+                    text = "";
+                    $("#js_video_element").show();
+                    image_name = "JS";
+                    break;
+
+                default:
+            }
+
+            img_str = "./data/" + image_name + ".jpg";
+            $('#course_page').css("background-image", "url(" + img_str + ")");
+            
+            $("#c_page_title").text(title);
+            $("#c_page_subtitle").text(subtitle);
+            $("#c_page_text").text(text);
+
+            $("#course_page").show();
+            $("#main_page").hide();
+
+        }
 
     </script>
 
