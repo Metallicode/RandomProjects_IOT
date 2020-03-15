@@ -141,22 +141,18 @@ a:focus {
     display: table;
     width: 100%;
     height: auto;
-    padding: 100px 0;
+    padding: 100px 0px;
+    padding-bottom:0px;
     text-align: right;
     background-color: #333;
-    /*background: url(../img/remuserGiff.gif) no-repeat bottom center scroll;*/
-   
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;*/
+
 }
 .intro .intro-body {
   display: table-cell;
   vertical-align: middle;
 }
 .intro .intro-body .brand-heading {
-  font-size: 40px;
+  font-size: 60px;
 }
 .intro .intro-body .intro-text {
   font-size: 18px;
@@ -428,13 +424,14 @@ html {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/*#top_title{
-    background-color:black;
-}
 
+#top_title {
+    background-color: black;
+
+}
 #top_subtitle {
     background-color: black;
-}*/
+}
 
 #metalli-link {
     color: white;
@@ -446,9 +443,36 @@ html {
 }
 
 #back_btn {
-    background-color: black;
+    color: black;
+    padding: 20px;
+    border: solid black;
+    box-shadow: 4px 4px;
+    background-color: #22dc00;
     font-size: 2.5em;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 40px;
-    
+}
+
+.video_element {
+    box-shadow: 8px 8px black;
+}
+
+#c_page_title {
+    font-size: 80px;
+    text-shadow: 4px 4px 8px black;
+    -webkit-text-stroke: 0.5px black;
+}
+
+#course_text_elements {
+    padding: 10px;
+    padding-right: 40px;
+}
+
+#c_page_subtitle{
+
+    background-color:black;
+}
+
+#c_page_text {
+    background-color: black;
 }

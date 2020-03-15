@@ -24,10 +24,11 @@
 
     <style>
         #intro-element {
-            background-image: url("./data/METAL.jpg");
+            background-image: url("./data/sml/METAL.jpg");
             background-size: cover;
             text-shadow: 4px 4px 8px black; 
             -webkit-text-stroke: 0.5px black;
+            height:100vh;
             color: white;
         }
 
@@ -50,6 +51,8 @@
 
         #course_page {
             direction: rtl;
+            background-size: cover;
+            height:100vh;
         }
 
         .blink_me {
@@ -71,8 +74,6 @@
 
     <div id="main_page">
 
-
-
         <!-- Navigation -->
         <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
             <div class="container">
@@ -81,7 +82,7 @@
                         תפריט <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="#page-top">
-                        <i><img class="fa" id="remusirIcon" src="img/remuserIcon.png" /></i>
+                        <i><img class="fa" id="remusirIcon" src="img/metallicodeIcon.png" /></i>
                         <span class="light"></span> מטאליקוד
                     </a>
                 </div>
@@ -117,15 +118,17 @@
                 <div dir="rtl" class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h1 id="top_title" class="brand-heading">לימודי תיכנות On-Line</h1>
+                            <h1 class="brand-heading"><span  id="top_title">לימודי תיכנות<br/>ON-LINE</span></h1>
 
-                            <h2 id="top_subtitle">
+                            <h2>
+                                <span id="top_subtitle">
+                                    שיעורי תכנות אונליין.
+                                    <br />
+                                    קבוצות נוער ומבוגרים - מתאים לכל הרמות.
+                                    <br />
+                                    לימודים בשפות PYTHON    C#    JAVASCRIPT.
+                                </span>
 
-                                שיעורי תכנות אונליין.
-                                <br />
-                                קבוצות נוער ומבוגרים - מתאים לכל הרמות.
-                                <br />
-                                לימודים בשפות PYTHON    C#    JAVASCRIPT.
                             </h2>
                             <center>
 
@@ -187,14 +190,13 @@
         <section id="contact" class="container content-section text-center">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2 dir="rtl">צור קשר:</h2>
-                    <p dir="rtl">להרשמה ולפרטים נוספים:</p>
+                    <h2 dir="rtl">להרשמה ולפרטים נוספים:</h2>
                     <p>
-                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailRemuserImg" src="img/emailRemuser.png"></a>
+                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailRemuserImg" src="img/emailMetallicode.png"></a>
                     </p>
                     <br />
                     <br />
-                    <h4>Social Media:</h4>
+                    <h4  dir="rtl">רשת חברתית:</h4>
                     <ul class="list-inline banner-social-buttons">
                         <li>
                             <a target="_blank" href="https://www.facebook.com/Metallicode/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
@@ -221,36 +223,36 @@
     <div id="course_page">
 
         <div id="course_page">
-            <h1 id="c_page_title"></h1>
-            <h4 id="c_page_subtitle"></h4>
+            <div id="course_text_elements">
+                <h2 id="c_page_title"></h2>
+                <h3><span id="c_page_subtitle"></span></h3>
+                <p><span id="c_page_text"></span></p>
+            </div>
+
             <center>
                 <div id="video_div">
                     <iframe id="py_video_element" class="video_element" width="560" height="315"
                             src="https://www.youtube.com/embed/FSq6ghoEFq8"
-                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            frameborder="0"
                             allowfullscreen></iframe>
 
                     <iframe id="cs_video_element" class="video_element" width="560" height="315"
-                            src= "https://www.youtube.com/embed/JzBxVReAkL8"
-                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            src="https://www.youtube.com/embed/JzBxVReAkL8"
+                            frameborder="0"
                             allowfullscreen></iframe>
 
                     <iframe id="js_video_element" class="video_element" width="560" height="315"
                             src="https://www.youtube.com/embed/CgQ3XlK8hk8"
-                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            frameborder="0"
                             allowfullscreen></iframe>
                 </div>
             </center>
+            <br />
+            <center>
+                <button id="back_btn">חזרה לדף הראשי</button>
+            </center>
 
-
-            <p id="c_page_text"></p>
         </div>
-
-        <center>
-            <button id="back_btn">חזור</button>
-        </center>
-
-       
 
     </div>
 
@@ -274,19 +276,26 @@
 
             $("#course_page").hide();
 
+            var top_img = new Image();
+            top_img.src = "./data/big/METAL.jpg";
+
+            top_img.onload = function () {
+
+                $('#intro-element').css("background-image", "url(" + this.src+ ")");
+            };
+
+
+            $("#back_btn").click(function () {
+                $("#main_page").show();
+                $("#course_page").hide();
+            });
+
+            $(".metallicode-app-img").click(function (e) {
+                 OpenCourse(e.target.getAttribute("course-name"));
+             });
+
         });
 
-        $("#back_btn").click(function () {
-             $("#main_page").show();
-            $("#course_page").hide();
-        });
-
-
-        $(".metallicode-app-img").click(function (e) {
-
-            OpenCourse(e.target.getAttribute("course-name"));
-
-        });
 
         function OpenCourse(course_name) {
 
@@ -305,7 +314,7 @@
                     subtitle = "סייבר, AI ,Data Science";
                     text = "";
                     $("#py_video_element").show();
-                    image_name = "Python";
+                    image_name = "PY";
                     break;
                 case "cs":
                     title = "קורס סי שארפ";
@@ -325,9 +334,18 @@
                 default:
             }
 
-            img_str = "./data/" + image_name + ".jpg";
+            img_str = "./data/sml/" + image_name + ".jpg";
             $('#course_page').css("background-image", "url(" + img_str + ")");
-            
+
+            img = new Image();
+            img.src = "./data/big/" + image_name + ".jpg";
+
+            img.onload = function () {
+                console.log("image ready");
+                $('#course_page').css("background-image", "url(" + this.src+ ")");
+            };
+
+
             $("#c_page_title").text(title);
             $("#c_page_subtitle").text(subtitle);
             $("#c_page_text").text(text);
@@ -336,6 +354,8 @@
             $("#main_page").hide();
 
         }
+
+
 
     </script>
 
