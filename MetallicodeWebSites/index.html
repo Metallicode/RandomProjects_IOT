@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Remuser">
+    <meta name="author" content="Remuser">
+
+    <title>Metallicode</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <style>
+        #intro-element {
+            background-image: url("./data/METAL.jpg");
+            background-size: cover;
+            text-shadow: 4px 4px 8px black; 
+            -webkit-text-stroke: 0.5px black;
+            color: white;
+        }
+
+
+        .metallicode-app-img {
+            width: 80vw;
+            margin-left: 3vw;
+            margin-right: 3vw;
+            margin-top: 2vh;
+        }
+        @media only screen and (min-width: 600px) {
+            .metallicode-app-img {
+                width: 30vw;
+                margin-left: 3vw;
+                margin-right: 3vw;
+                margin-top: 2vh;
+            }
+
+        }
+
+
+        .blink_me {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+
+    </style>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" id="menuButton" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    תפריט <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i><img class="fa" id="remusirIcon" src="img/remuserIcon.png" /></i>
+                    <span class="light"></span> מטאליקוד
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">צור קשר</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about_metallicode">מי אני</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">שיעורים מוקלטים</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#courses">ONLINE קורסים</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">ראשי</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body" id="intro-element">
+            <div dir="rtl" class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 id="top_title" class="brand-heading">לימודי תיכנות On-Line</h1>
+
+                        <h2 id="top_subtitle">
+
+                            שיעורי תכנות אונליין.
+                            <br />
+                            קבוצות נוער ומבוגרים - מתאים לכל הרמות.
+                            <br />
+                            לימודים בשפות PYTHON    C#    JAVASCRIPT.
+                        </h2>
+                        <center>
+                           
+                            <button id="learn_more_btn">
+                                <span>פרטים נוספים</span>
+                            </button>
+                        </center>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <hr />
+
+    <!-- courses Section -->
+    <section id="courses" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 id="alma-link" dir="rtl">הקורסים שלנו:</h2>
+                    <div>
+                        <a href=""><img title="ללמוד פייתון" class="metallicode-app-img" src="img/metallicode_app_py.png" /></a>
+                        <a href=""><img title="ללמוד סי שארפ" class="metallicode-app-img" src="img/metallicode_app_cs.png" /></a>
+                        <a href=""><img title="ללמוד ג'אווה סקריפט" class="metallicode-app-img" src="img/metallicode_app_js.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+
+    <!-- about Section -->
+    <section id="about_metallicode" class="content-section text-center">
+        <div class="about-section">
+            <div class="container">
+                <div dir="rtl" class="col-lg-8 col-lg-offset-2">
+                    <h2 id="metalli-link" dir="rtl">מי זה מטאליקוד?</h2>
+                    <div>
+                        <img title="נעים להכיר!" class="metallicode-app-img" src="img/metallicode_about.png" />
+                    </div>
+                    <p id="about_metallicode_text">
+
+                        יליד 1983, מדריך להנדסת תוכנה, אמן סאונד ומפיק מוסיקלי.
+                        <br />
+                        מייסד של <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">מטאליקוד</a> - פרוייקט קהילתי ללימוד תיכנות מחשבים.
+                        <br />
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 dir="rtl">צור קשר:</h2>
+                <p dir="rtl">להרשמה ולפרטים נוספים:</p>
+                <p>
+                    <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailRemuserImg" src="img/emailRemuser.png"></a>
+                </p>
+                <br />
+                <br />
+                <h4>Social Media:</h4>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/Metallicode/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i> <span class="network-name">Youtube</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; www.Metallicode.com 2020</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+    <script>
+        $(function () {
+
+            var images = ["Python", "CS", "JS", "METAL"];
+            var counter = 0;
+            setInterval(function () {
+
+                if (counter == images.length) {
+                    counter = 0;
+                }
+
+                img_str = "./data/" + images[counter++] + ".jpg";
+                $('#intro-element').css("background-image", "url(" + img_str + ")");
+
+            }, 2000);
+        });
+
+    </script>
+
+</body>
+</html>
