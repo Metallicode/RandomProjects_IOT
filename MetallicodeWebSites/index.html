@@ -92,16 +92,13 @@
                         תפריט <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="#page-top">
-                        <i><img class="fa" id="metallicodeIcon" src="./img/metallicodeIcon.png" /></i>
+                        <i><img class="fa" id="metallicodeIcon" src="img/metallicodeIcon.png" /></i>
                         <span class="light"></span> מטאליקוד
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
+                <div dir="rtl" class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul  class="nav navbar-nav">
                         <li>
                             <a class="page-scroll" href="#contact">צור קשר</a>
                         </li>
@@ -161,9 +158,9 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2 id="alma-link" dir="rtl">הקורסים שלנו:</h2>
                         <div>
-                            <img title="ללמוד פייתון" class="metallicode-app-img" course-name="py" src="img/metallicode_app_py.png" />
-                            <img title="ללמוד סי שארפ" class="metallicode-app-img" course-name="cs" src="img/metallicode_app_cs.png" />
-                            <img title="ללמוד ג'אווה סקריפט" class="metallicode-app-img" course-name="js" src="img/metallicode_app_js.png" />
+                            <img title="ללמוד פייתון" id="course_preview_py" class="metallicode-app-img gif" course-name="py" src="img/metallicode_app_py.jpg" />
+                            <img title="ללמוד סי שארפ" id="course_preview_cs" class="metallicode-app-img gif" course-name="cs" src="img/metallicode_app_cs.jpg" />
+                            <img title="ללמוד ג'אווה סקריפט" id="course_preview_js" class="metallicode-app-img gif" course-name="js" src="img/metallicode_app_js.jpg" />
                         </div>
                     </div>
                 </div>
@@ -202,7 +199,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2 dir="rtl">להרשמה ולפרטים נוספים:</h2>
                     <p>
-                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailMetallicodeImg" src="./img/emailMetallicode.png"></a>
+                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailMetallicodeImg" src="img/emailMetallicode.png"/></a>
                     </p>
                     <br />
                     <br />
@@ -302,9 +299,23 @@
 
             $(".metallicode-app-img").click(function (e) {
                  OpenCourse(e.target.getAttribute("course-name"));
-             });
+            });
+
+
+            $('.gif').mouseover( function() {
+               
+                console.log($(this).attr("course-name"));
+                this.src = "img/metallicode_app_"+ $(this).attr("course-name")+".gif";
+            });
+
+            $('.gif').mouseout( function() { 
+                console.log($(this).attr("course-name"));
+                this.src = "img/metallicode_app_"+ $(this).attr("course-name")+".jpg";
+            });
 
         });
+
+
 
 
         function OpenCourse(course_name) {

@@ -93,7 +93,7 @@ a:focus {
         -webkit-transition: background 0.3s ease-in-out;
         -moz-transition: background 0.3s ease-in-out;
         transition: background 0.3s ease-in-out;
-        padding-top: 30px;
+       padding-top:15px;
     }
 .navbar-custom .nav li a:hover {
   color: rgba(255, 255, 255, 0.8);
@@ -126,7 +126,7 @@ a:focus {
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
   }
     .navbar-custom.top-nav-collapse {
-        padding: 0;
+        padding-top:50px;
         background-color: #333;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
@@ -347,8 +347,9 @@ body {
 
 
 #metallicodeIcon {
-    width:50px;
-    height: 50px;
+    width:25px;
+    height: 25px;
+ 
 }
 
 #apps-title {
@@ -387,7 +388,7 @@ body {
 }
 
 #menuButton {
-    margin-top: 15px;
+    margin-top:0px;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 }
@@ -422,6 +423,13 @@ html {
 
 .navbar-brand {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+}
+@media (max-width: 767px) {
+
+    .navbar-brand {
+        padding-top:20px;
+    }
 }
 
 
@@ -496,3 +504,4 @@ iframe {
         width: 70vw;
     }
 }
+
