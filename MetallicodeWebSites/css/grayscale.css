@@ -346,7 +346,7 @@ body {
 }
 
 
-#remusirIcon {
+#metallicodeIcon {
     width:50px;
     height: 50px;
 }
@@ -382,7 +382,7 @@ body {
     width:300px;
 }
 
-#emailRemuserImg {
+#emailMetallicodeImg {
     width: 100px;
 }
 
@@ -452,6 +452,13 @@ html {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+
+    #back_btn {
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+}
 
 .video_element {
     box-shadow: 8px 8px black;
@@ -475,4 +482,17 @@ html {
 
 #c_page_text {
     background-color: black;
+}
+
+iframe {
+    height: 315px;
+    width: 560px;
+}
+
+@media (max-width: 767px) {
+
+    iframe {
+        height: 25vh;
+        width: 70vw;
+    }
 }

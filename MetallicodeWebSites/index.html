@@ -52,7 +52,17 @@
         #course_page {
             direction: rtl;
             background-size: cover;
-            height:100vh;
+            height:120vh;
+        }
+
+        @media (max-width: 768px){
+            #course_page {
+                height:auto;    
+                font-size:1.5em;
+            }
+            p{
+                font-size:1.05em;
+            }
         }
 
         .blink_me {
@@ -82,7 +92,7 @@
                         תפריט <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="#page-top">
-                        <i><img class="fa" id="remusirIcon" src="img/metallicodeIcon.png" /></i>
+                        <i><img class="fa" id="metallicodeIcon" src="./img/metallicodeIcon.png" /></i>
                         <span class="light"></span> מטאליקוד
                     </a>
                 </div>
@@ -146,7 +156,7 @@
 
         <!-- courses Section -->
         <section id="courses" class="content-section text-center">
-            <div class="download-section">
+            
                 <div class="container">
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2 id="alma-link" dir="rtl">הקורסים שלנו:</h2>
@@ -157,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        
         </section>
 
         <hr />
@@ -192,7 +202,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2 dir="rtl">להרשמה ולפרטים נוספים:</h2>
                     <p>
-                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailRemuserImg" src="img/emailMetallicode.png"></a>
+                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailMetallicodeImg" src="./img/emailMetallicode.png"></a>
                     </p>
                     <br />
                     <br />
@@ -222,7 +232,7 @@
 
     <div id="course_page">
 
-        <div id="course_page">
+
             <div id="course_text_elements">
                 <h2 id="c_page_title"></h2>
                 <h3><span id="c_page_subtitle"></span></h3>
@@ -231,17 +241,17 @@
 
             <center>
                 <div id="video_div">
-                    <iframe id="py_video_element" class="video_element" width="560" height="315"
+                    <iframe id="py_video_element" class="video_element" 
                             src="https://www.youtube.com/embed/FSq6ghoEFq8"
                             frameborder="0"
                             allowfullscreen></iframe>
 
-                    <iframe id="cs_video_element" class="video_element" width="560" height="315"
+                    <iframe id="cs_video_element" class="video_element" 
                             src="https://www.youtube.com/embed/JzBxVReAkL8"
                             frameborder="0"
                             allowfullscreen></iframe>
 
-                    <iframe id="js_video_element" class="video_element" width="560" height="315"
+                    <iframe id="js_video_element" class="video_element" 
                             src="https://www.youtube.com/embed/CgQ3XlK8hk8"
                             frameborder="0"
                             allowfullscreen></iframe>
@@ -252,7 +262,7 @@
                 <button id="back_btn">חזרה לדף הראשי</button>
             </center>
 
-        </div>
+
 
     </div>
 
@@ -312,21 +322,32 @@
                 case "py":
                     title = "קורס פייתון";
                     subtitle = "סייבר, AI ,Data Science";
-                    text = "";
+                    text = "פייתון היא ללא ספק שפת התיכנות האלגנטית ביותר בתעשיה. \
+שימושה העיקרי הוא בפיתוח אלגוריתימים ויישומים באורייאנטציה גדולה לתחום הסייבר וה-AI. \
+פייתון יכולה לרוץ על כל מערכות ההפעלה ומכילה ספריות חזקות לניתוח נתונים, סטטיסטיקה ועיבוד אותות. \
+בנוסף, התמחות בפייתון מאפשרת גם פיתוח לתחום הווב ופיתוח יישומי מחשב (תוכנות).";
                     $("#py_video_element").show();
                     image_name = "PY";
                     break;
+
                 case "cs":
                     title = "קורס סי שארפ";
                     subtitle = "שפת העל של מיקרוסופט .net";
-                    text = "";
+                    text = "סי שארפ היא שפה מונחית-עצמים (OOP) מורכבת ועמוסה בכל טוב שנוצרה על ידי חברת מיקרוסופט. \
+עם סי שארפ תוכלו לכתוב יישומי WINDOWS, וWEB מורכבים ומתוחכמים שעומדים בסטנדרטים של התעשייה. \
+סי שארפ היא גם השפה שרצה על UNITY, מנוע משחקים עוצמתי איתו ניתן לפתח משחקים ואפליקציות. \
+מכיוון שסי שארפ בנוייה בצורה מסודרת ומאורגנת להפליא, היא שפה מעולה ללימוד תיכנות שעוזרת להשריש \
+אצל התלמיד יסודות חזקים מתחום מדעי המחשב.";
                     $("#cs_video_element").show();
                     image_name = "CS";
                     break;
+
                 case "js":
                     title = "קורס ג'אווה סקריפט";
                     subtitle = "שפת התיכנות של האינטרנט";
-                    text = "";
+                    text = "מה שכתוב כרגע על המסך שלכם נמצא בתוך דפדפן (BROWSER) והשפה שהוא מריץ היא ג'אווה סקריפט. \
+כאשר אנחנו לוחצים על כפתור שמופיע על המסך, יש מאחורי הקלעים (תלחצו F12 ותראו בעצמכם..) סקריפט שיודע שלחצנו על כפתור מסויים ויודע שצריך לעשות פעולה כלשהי; לשנות משהו בגרפיקה, להפעיל צליל, לעבור לאתר אחר או מה שנרצה. \
+ג'אווה סקריפט היא שפה צבעונית ומרתקת, ויש כמעט אין-סוף ספריות לעבודה עם גרפיקה, סאונד, עיבוד מידע ועוד המון."; 
                     $("#js_video_element").show();
                     image_name = "JS";
                     break;
@@ -352,6 +373,7 @@
 
             $("#course_page").show();
             $("#main_page").hide();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
 
         }
 
