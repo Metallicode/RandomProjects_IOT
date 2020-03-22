@@ -9,11 +9,11 @@ body {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fcfcfc;
     background-color: rgba(255, 255, 255, 0.1);
+    overflow-x: hidden;
 }
 
 .blink_me {
-    color: #5691cc;
-    background-color: #d6d5c1;
+
 }
 
 html {
@@ -72,6 +72,7 @@ a:focus {
         color: #22dc00;
         background-color: #333;
         font-size: 30px;
+        margin-right:5px;
     }
         .navbar-custom .navbar-toggle:focus,
         .navbar-custom .navbar-toggle:active {
@@ -383,7 +384,7 @@ body {
     width:300px;
 }
 
-#emailMetallicodeImg {
+.emailMetallicodeImg {
     width: 100px;
 }
 
@@ -451,11 +452,11 @@ html {
 }
 
 #back_btn {
-    color: black;
+    color: #22dc00;
     padding: 20px;
-    border: solid black;
+    border: solid gray;
     box-shadow: 4px 4px;
-    background-color: #22dc00;
+    background-color: black;
     font-size: 2.5em;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 40px;
@@ -505,3 +506,75 @@ iframe {
     }
 }
 
+#intro-element {
+    background-image: url("./data/sml/METAL.jpg");
+    background-size: cover;
+    text-shadow: 4px 4px 8px black;
+    -webkit-text-stroke: 0.5px black;
+    height: 100vh;
+    color: white;
+}
+
+
+.metallicode-app-img {
+    width:100vw;
+    
+    margin-top: 5vh;
+}
+
+@media only screen and (min-width: 600px) {
+    .metallicode-app-img {
+        width: 30vw;
+        margin-top: 5vh;
+    }
+}
+
+#course_page {
+    direction: rtl;
+    background-size: cover;
+    height: 120vh;
+}
+
+@media (max-width: 768px) {
+    #course_page {
+        height: auto;
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.05em;
+    }
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.new_container{
+
+    padding:0px;
+
+}
+
+
+#nav_cont {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#main_nav{
+
+    width:100vw;
+}
+
+#general_info_div{
+
+    padding:20px;
+    background-color:black;
+}

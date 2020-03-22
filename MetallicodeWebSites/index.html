@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Remuser">
-    <meta name="author" content="Remuser">
+    <meta name="description" content="לימודי תיכנות בכיף">
+    <meta name="author" content="Metallicode מטאליקוד">
 
     <title>Metallicode</title>
+
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -22,61 +24,6 @@
     <!-- Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 
-    <style>
-        #intro-element {
-            background-image: url("./data/sml/METAL.jpg");
-            background-size: cover;
-            text-shadow: 4px 4px 8px black; 
-            -webkit-text-stroke: 0.5px black;
-            height:100vh;
-            color: white;
-        }
-
-
-        .metallicode-app-img {
-            width: 80vw;
-            margin-left: 3vw;
-            margin-right: 3vw;
-            margin-top: 2vh;
-        }
-        @media only screen and (min-width: 600px) {
-            .metallicode-app-img {
-                width: 30vw;
-                margin-left: 3vw;
-                margin-right: 3vw;
-                margin-top: 2vh;
-            }
-
-        }
-
-        #course_page {
-            direction: rtl;
-            background-size: cover;
-            height:120vh;
-        }
-
-        @media (max-width: 768px){
-            #course_page {
-                height:auto;    
-                font-size:1.5em;
-            }
-            p{
-                font-size:1.05em;
-            }
-        }
-
-        .blink_me {
-            animation: blinker 1s linear infinite;
-        }
-
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-
-
-    </style>
 
 </head>
 
@@ -85,9 +32,9 @@
     <div id="main_page">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
+        <nav id="main_nav" class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container new_container">
+                <div id="nav_cont" class="navbar-header">
                     <button type="button" class="navbar-toggle" id="menuButton" data-toggle="collapse" data-target=".navbar-main-collapse">
                         תפריט <i class="fa fa-bars"></i>
                     </button>
@@ -122,7 +69,7 @@
         <!-- Intro Header -->
         <header class="intro">
             <div class="intro-body" id="intro-element">
-                <div dir="rtl" class="container">
+                <div dir="rtl" class="container new_container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <h1 class="brand-heading"><span  id="top_title">לימודי תיכנות<br/>ON-LINE</span></h1>
@@ -154,8 +101,8 @@
         <!-- courses Section -->
         <section id="courses" class="content-section text-center">
             
-                <div class="container">
-                    <div class="col-lg-8 col-lg-offset-2">
+                <div class="container new_container">
+                    <div>
                         <h2 id="alma-link" dir="rtl">הקורסים שלנו:</h2>
                         <div>
                             <img title="ללמוד פייתון" id="course_preview_py" class="metallicode-app-img gif" course-name="py" src="img/metallicode_app_py.jpg" />
@@ -172,15 +119,15 @@
         <!-- about Section -->
         <section id="about_metallicode" class="content-section text-center">
             <div class="about-section">
-                <div class="container">
-                    <div dir="rtl" class="col-lg-8 col-lg-offset-2">
+                <div class="container new_container">
+                    <div dir="rtl" >
                         <h2 id="metalli-link" dir="rtl">מי זה מטאליקוד?</h2>
                         <div>
                             <img title="נעים להכיר!" class="metallicode-app-img" src="img/metallicode_about.png" />
                         </div>
                         <p id="about_metallicode_text">
 
-                            יליד 1983, מדריך להנדסת תוכנה, אמן סאונד ומפיק מוסיקלי.
+                            יליד 1983, מדריך להנדסת תוכנה,<a href="https://www.youtube.com/watch?v=chPnfDVXSdI"> אמן סאונד</a> ומפיק מוסיקלי.
                             <br />
                             מייסד של <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w">מטאליקוד</a> - פרוייקט קהילתי ללימוד תיכנות מחשבים.
                             <br />
@@ -194,12 +141,12 @@
         <hr />
 
         <!-- Contact Section -->
-        <section id="contact" class="container content-section text-center">
+        <section id="contact" class="container new_container content-section text-center">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2 dir="rtl">להרשמה ולפרטים נוספים:</h2>
                     <p>
-                        <a href="mailto:gigahertzvectorizer@gmail.com"><img title="שלח מייל" id="emailMetallicodeImg" src="img/emailMetallicode.png"/></a>
+                        <a href="mailto:gigahertzvectorizer@gmail.com?subject=הרשמה למטאליקוד&body=אני רוצה להירשם!"><img title="שלח מייל" class="emailMetallicodeImg" src="img/emailMetallicode.png"/></a>
                     </p>
                     <br />
                     <br />
@@ -211,6 +158,9 @@
                         <li>
                             <a target="_blank" href="https://www.youtube.com/channel/UCgF28qGPeu_Tdfq0vTIMW8w" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i> <span class="network-name">Youtube</span></a>
                         </li>
+                        <li>
+                            <a target="_blank" href="http://m.me/metallicode/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Messenger</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -219,7 +169,7 @@
 
         <!-- Footer -->
         <footer>
-            <div class="container text-center">
+            <div class="container new_container text-center">
                 <p>Copyright &copy; www.Metallicode.com 2020</p>
             </div>
         </footer>
@@ -254,6 +204,34 @@
                             allowfullscreen></iframe>
                 </div>
             </center>
+
+
+            <div dir="rtl" id="general_info_div">
+                <p>
+                    הלימודים במטאליקוד מתקיימים בחוג יומי אונליין, בשימוש תוכנת <a href="https://zoom.us/support/download">Zoom</a> לפי שפת התיכנות אותה לומדים.
+                    <ul>
+                        <li>ימי ראשון - <a course-name="py" href="#" onclick="course_link_click(event); return false;">פייתון</a></li>
+                        <li>ימי שלישי - <a course-name="js" href="#" onclick="course_link_click(event); return false;">ג'אווה סקריפט</a></li>
+                        <li>ימי חמישי - <a course-name="cs" href="#" onclick="course_link_click(event); return false;">סי שארפ</a></li>
+                    </ul>
+                    (שעות הלימוד יקבעו בעת ההרשמה לקבוצה).
+                    <br />
+                    <br />
+
+                    <h2 dir="rtl"><b class="blink_me">להרשמה ופרטים נוספים:</b> </h2>
+                    <center>
+                <p>
+                    <a href="mailto:gigahertzvectorizer@gmail.com?subject=הרשמה למטאליקוד&body=אני רוצה להירשם!"><img title="שלח מייל" class="emailMetallicodeImg" src="img/emailMetallicode.png" /></a>
+                </p>
+
+                        <a target="_blank" href="http://m.me/metallicode/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Messenger</span></a>
+ 
+                </center>
+
+                </p>
+            </div>
+
+
             <br />
             <center>
                 <button id="back_btn">חזרה לדף הראשי</button>
@@ -304,19 +282,20 @@
 
             $('.gif').mouseover( function() {
                
-                console.log($(this).attr("course-name"));
-                this.src = "img/metallicode_app_"+ $(this).attr("course-name")+".gif";
+                //this.src = "img/metallicode_app_"+ $(this).attr("course-name")+".gif";
             });
 
             $('.gif').mouseout( function() { 
-                console.log($(this).attr("course-name"));
-                this.src = "img/metallicode_app_"+ $(this).attr("course-name")+".jpg";
+
+                //this.src = "img/metallicode_app_"+ $(this).attr("course-name")+".jpg";
             });
 
         });
 
 
-
+        function course_link_click(e) {
+            OpenCourse(e.target.getAttribute("course-name"));       
+        }
 
         function OpenCourse(course_name) {
 
@@ -338,6 +317,7 @@
 פייתון יכולה לרוץ על כל מערכות ההפעלה ומכילה ספריות חזקות לניתוח נתונים, סטטיסטיקה ועיבוד אותות. \
 בנוסף, התמחות בפייתון מאפשרת גם פיתוח לתחום הווב ופיתוח יישומי מחשב (תוכנות).";
                     $("#py_video_element").show();
+                    $("#general_info_div").hide();
                     image_name = "PY";
                     break;
 
@@ -350,6 +330,7 @@
 מכיוון שסי שארפ בנוייה בצורה מסודרת ומאורגנת להפליא, היא שפה מעולה ללימוד תיכנות שעוזרת להשריש \
 אצל התלמיד יסודות חזקים מתחום מדעי המחשב.";
                     $("#cs_video_element").show();
+                    $("#general_info_div").hide();
                     image_name = "CS";
                     break;
 
@@ -360,10 +341,17 @@
 כאשר אנחנו לוחצים על כפתור שמופיע על המסך, יש מאחורי הקלעים (תלחצו F12 ותראו בעצמכם..) סקריפט שיודע שלחצנו על כפתור מסויים ויודע שצריך לעשות פעולה כלשהי; לשנות משהו בגרפיקה, להפעיל צליל, לעבור לאתר אחר או מה שנרצה. \
 ג'אווה סקריפט היא שפה צבעונית ומרתקת, ויש כמעט אין-סוף ספריות לעבודה עם גרפיקה, סאונד, עיבוד מידע ועוד המון."; 
                     $("#js_video_element").show();
+                    $("#general_info_div").hide();
                     image_name = "JS";
                     break;
 
                 default:
+                    title = "מטאליקוד - לומדים לתכנת בכיף!";
+                    subtitle = "לימודי תיכנות אונליין בקבוצות קטנות.";
+                    text = ""; 
+                    $("#general_info_div").show();
+                    image_name = "METAL";
+                    break;
             }
 
             img_str = "./data/sml/" + image_name + ".jpg";
