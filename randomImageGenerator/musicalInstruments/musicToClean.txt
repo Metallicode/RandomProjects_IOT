@@ -1,0 +1,467 @@
+
+A	A
+Accelerando
+Accompaniment
+Adagio
+Affections
+Air
+Alla
+Allegro
+Allemande
+Alto
+Andante
+Anthem
+Arabesque
+Arco
+Aria
+Arietta
+Ariette
+Assai
+Atonal
+Aubade
+B	B
+Badinerie
+Bagatelle
+Bagpipe
+Ballad
+Ballad opera
+Ballata
+Ballet
+Ballet-héroïque
+Bar
+Barcarolle
+Baritone
+Baroque
+Bass
+Bass (voice)
+Bass-baritone
+Basso buffo
+Bass cantante
+Basso continuo
+Basso profondo
+Bassoon
+Beat
+Berceuse
+Bewegt
+Bolero
+Bourrée
+Brass
+Breeches role
+Brio
+Buffo
+Burlesque
+Burletta
+C	C
+Cabaletta
+Cadence
+Cadenza
+Camera
+Canon
+Cantabile
+Cantata
+Canzone
+Canzonetta
+Cappella
+Capriccio, caprice
+Cassation
+Castrato
+Cavatina
+Celesta
+Cello
+Cembalo
+Chaconne
+Chamber music
+Chamber orchestra
+Chanson
+Chant
+Chapel
+Choir
+Chorale
+Chorale prelude
+Chord
+Chorus
+Chromatic
+Clarinet
+Clarino
+Classical
+Clavichord
+Clef
+Coda
+Coloratura
+Comédie lyrique • Comédie en musique
+Comédie mêlée d’ariettes
+Comédie-ballet
+Comédie larmoyante
+Commedia dell’arte
+Comprimario
+Concertante
+Concertino
+Concerto
+Concerto grosso
+Consort
+Continuo
+Contralto
+Cor anglais
+Cornet
+Cornetto
+Counterpoint
+Countertenor
+Courante
+Crescendo
+Cycle
+Cymbals
+	D
+Da capo
+Dal segno
+Decrescendo
+Diminuendo
+Divertimento
+Divertissement
+Double bass
+Double bassoon
+Dramatic soprano
+Drame lyrique
+Dramma giocoso
+Dramma per musica
+Drum
+Duet
+Duo
+Dynamics
+E	E
+Echo
+Elegy
+English horn
+Ensemble
+Entr’acte
+Entrée
+Etude
+Exposition
+F	F
+Fagott
+Fairy-tale opera
+Falsetto
+Fanfare
+Fantasy
+Farsa
+Favola in musica
+Festa teatrale
+Fiddle
+Finale
+Flat
+Flautist
+Flute
+Follia, La
+Forte
+Fortepiano
+Fugue
+G
+Galliard
+Galop
+Gamba
+German dance
+Gigue
+Giocoso
+Giusto
+Glissando
+Glockenspiel
+Gong
+Grand opéra
+Grave
+Grazioso
+Gregorian chant
+Guitar
+H	H
+Habanera
+Harmonica
+Harmoniemusik
+Harmonium
+Harmony
+Harp
+Harpsichord
+Haute-contre
+Heldentenor
+Horn
+Hornpipe
+Humoresque
+Hymn
+I	
+Impressionism
+Impromptu
+Improvisation
+Instrumentation
+Interlude
+Intermède
+Intermedio
+Intermezzo
+Interval
+Intonation
+Invention
+Istesso tempo, l’
+Jig
+Jota
+K	Kapelle
+Kapellmeister
+Key
+Key signature
+Konzertmeister
+L	Lament
+Lamentations
+Ländler
+Larghetto
+Largo
+Legato
+Leggero (Leggiero)
+Legno
+Leitmotif
+Lento
+Libretto
+Lied
+Lieto fine
+L’istesso tempo
+Loure
+Lute
+Lyre
+Lyric soprano
+Lyric tenor
+Mad scene
+Madrigal
+Madrigal comedy
+Maestoso
+Magic opera
+Magnificat
+Major
+Malagueña
+Mandolin
+Manual
+Märchenoper
+Marimba
+Masque
+Mass
+Mazurka
+Measure
+Mélodie
+Melodrama
+Melodramma
+Meno
+Mesto
+Metamorphosis
+Metre
+Metronome
+Mezzo
+Mezzo-soprano
+Minor
+Minstrel
+Minuet
+Miserere
+Missa
+Mode
+Moderato
+Mosso
+Molto
+Monody
+Motet
+Motif
+Moto
+Movement
+Music drama
+Music theatre
+Mute
+N	Nachtmusik
+Natural
+Neoclassical
+Nocturne
+Nonet
+Notation
+Note
+Number opera
+O	Obbligato
+Oboe
+Octave
+Octet
+Ondes martenot
+Opera
+Opéra bouffe
+Opera buffa
+Opéra comique
+Opéra féerie
+Opéra semiseria
+Opera seria
+Opéra-ballet
+Operetta
+Opus
+Oratorio
+Orchestra
+Orchestration
+Organ
+Ostinato
+Overture
+
+P	Pantomime
+Parlando
+Part
+Partita
+Passacaglia
+Passion
+Pasticcio
+Pastorale
+Pavan
+Pentatonic
+Percussion
+Performance practice
+Philharmonic
+Phrase
+Piano
+Piano trio
+Pianoforte
+Piccolo
+Pitch
+Piú
+Pizzicato
+Plainchant
+Poco
+Polacca
+Polka
+Polonaise
+Polyphony
+Post horn
+Postlude
+Preghiera
+Prelude
+Presto
+Prima donna
+Primo uomo
+Programme music
+Psalm
+Q	Quadrille
+Quarter-tone
+Quartet
+Querelle des Bouffons
+Quintet
+Quodlibet
+R	Rallentando
+Rappresentazione sacra
+Recitative
+Recitativo accompagnato
+Recitativo secco
+Recorder
+Reed
+Register
+Registration
+Repetiteur
+Requiem Mass
+Rescue opera
+Rhapsody
+Rhythm
+Rigaudon
+Ritardando
+Ritenuto
+Ritornello
+Rococo
+Romanticism
+Rondo
+Rubato
+
+S	Saltarello
+Sacred opera
+Sarabande
+Saxophone
+Scale
+Scena
+Scene
+Scherzo
+Score
+Seguidilla
+Semi-opera
+Sempre
+Senza
+Septet
+Serenade
+Serenata
+Serialism
+Sextet
+Sharp
+Siciliana
+Side-drum
+Sinfonia
+Sinfonia concertante
+Sinfonietta
+Singspiel
+Sonata
+Sonata form
+Sonatina
+Soprano
+Sostenuto
+Spinet
+Spinto
+Sprechgesang • Sprechstimme
+Staff
+Stile concitato
+Stile rappresentativo
+Stop
+Stretto
+String
+Study
+Subject
+Suite
+Symphony
+T	Tafelmusik
+Tambourine
+Tam-tam
+Tanto
+Tarantella
+Te Deum
+Temperaments
+Tempo
+Tenor
+Ternary form
+Theme
+Theremin
+Time
+Timpani
+Toccata
+Tombeau
+Tone poem
+Tragédie en musique
+Transcription
+Transposition
+Transverse flute
+Treble
+Tremolo
+Triangle
+Trill
+Trio
+Trio sonata
+Trombone
+Troppo
+Troubadour
+Trumpet
+Tuba
+Tubular bells
+Tuning-fork
+Turca
+Tutti
+Twelve-note composition
+U	
+Unison
+
+V	Variations
+Vaudeville
+Verismo
+Vespers
+Vibraphone
+Vibrato
+Viol
+Viola
+Viola d’amore
+Violin
+Violone
+Virginal
+Vivace
+Vocalise
+Voice
+W	Waltz
+Woodwind
+x	Xylophone
+
+Z	Zarzuela
+Zauberoper
